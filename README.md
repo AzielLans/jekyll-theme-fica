@@ -1,13 +1,10 @@
-# jekyll-theme-fica
+<img src="logo.png" align="left" />
+<h1 align="left">Fica Theme</h1>
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+You can preview the theme to [see what it looks like](https://involts.github.io/jekyll-theme-fica/) or
+[download it today !](https://github.com/Involts/jekyll-theme-fica/zipball/master)
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
-
-
-## Installation
+## Installation and first use
 
 Add this line to your Jekyll site's `Gemfile`:
 
@@ -21,31 +18,71 @@ And add this line to your Jekyll site's `_config.yml`:
 theme: jekyll-theme-fica
 ```
 
-And then execute:
+to install all the dependencies:
 
-    $ bundle
+    $ script/bootstrap
 
-Or install it yourself as:
+and run, to run your jekyll site:
 
-    $ gem install jekyll-theme-fica
+    $ script/build
+## Note:
+  Before publishing the site to github-pages, replace the varable of baseurl:
 
-## Usage
+  if you have brought a doman remove the varable below: 
+  ```
+   # _config.yml
+   baseurl: [Your Repository Name]
+  ```
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+# Customizations
 
-## Contributing
+## Customizing '_config.yml'
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Cayman will respect the following variables, in your '_config.yml' file:
 
-## Development
+```
+title: [The title of your site]
+author: [The auther of the site]
+name: [The owner of the site]
+description: [A short description of your site's purpose]
+```
+Change the links of your site header:
+```
+header:
+  header_name_1: Download
+  header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+  header_name_2: Post
+  header_link_2: /Post/
+  header_name_3: About
+  header_link_3: /About/
+```
+## Customizing the Styles, Vriables and Color Scheme:
+if you like to override the default styles of the theme, go to '_sass/Custom-Styles.scss'.
+if you like to override the default Variables of the theme, go to '_sass/Custom-Variable.scss'.
+if you like to change the colors of the site, go to '_sass/Color_scheme.scss'.
 
-To set up your environment to develop this theme, run `bundle install`.
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+## How to replace the logo on the header ?
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `jekyll-theme-fica.gemspec` accordingly.
+Replace logo.png at the top of your site.
+Make sure that the logo is 16x16 px to avoid overlapping the title.   
 
+## how to replace the pictue at the homepage ?
+
+Replace 'assets/img/fica_ad.png'.
+# Customizing Google Analytics code
+
+Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into _includes/Google-Analytics.html in your Jekyll site.
+
+# Contributing
+
+Bug reports and pull requests are welcome on GitHub at [Fica Theme](https://github.com/Involts/hello). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+# Development
+
+To set up your environment to develop this theme, run `script/bootstrap`.
+
+Your theme is setup just like a normal Jekyll site! To test your theme, run `script/build` and open your browser at `http://localhost:4000/jekyll-theme-fica/` or 'http://localhost:4000(site.baseurl)'. This starts a Jekyll server using the Fica Theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

@@ -24,7 +24,7 @@ layout: default
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}</p>
-      <a  href="/Post/" class="btn">Go Back</a>
+      <a  href="{{site.baseurl}}/Post/" class="btn">Go Back</a>
   </header>
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}

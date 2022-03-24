@@ -6,7 +6,7 @@
   "Initialize";
 
   .site-title::before {
-    content: url("/logo.png");
+    content: url("{{site.baseurl}}/logo.png");
     display: inline-block;
     position: relative;
     width: 37px;
