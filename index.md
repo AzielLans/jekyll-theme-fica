@@ -1,5 +1,4 @@
 ---
-title: Homepage
 layout: home
 site-title: Fica Theme | A modern theme with minimal look
 home: true

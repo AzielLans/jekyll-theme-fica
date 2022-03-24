@@ -1,12 +1,6 @@
 *.gem
-
-.bundle/
-vendor/
-
-.jekyll-cache/
+.bundle
+.jekyll-cache
 .sass-cache
-_site/
-
-lol
-
+_site
 Gemfile.lock

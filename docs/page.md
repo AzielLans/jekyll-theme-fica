@@ -1,6 +1,6 @@
 ---
 title: Page
-layout: page
+layout: default
 permalink: /page/
 ---
 
