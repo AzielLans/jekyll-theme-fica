@@ -3,7 +3,7 @@ author: Involts
 name: Involts
 description: A modern theme with minimal look.
 google_analytics: true
-base_url: "/jekyll-theme-fica/"
+baseurl: "/jekyll-theme-fica/"
 show_descriptions: true # set to true to show descriptions
 # Links in Header
 header:
