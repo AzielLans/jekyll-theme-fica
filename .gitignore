@@ -7,4 +7,6 @@ vendor/
 .sass-cache
 _site/
 
+lol
+
 Gemfile.lock
