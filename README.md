@@ -1,5 +1,5 @@
-<img src="logo.png" align="right" />
-<h1 align="right">Fica Theme</h1>
+<img src="logo.png" align="left" />
+<h1 align="left">Fica Theme</h1>
 
                             
 You can preview the theme to [see what it looks like](https://involts.github.io/jekyll-theme-fica/) or
