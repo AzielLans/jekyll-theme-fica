@@ -1,5 +1,4 @@
-<img src="logo.png" align="left" />
-<h1 align="left">Fica Theme</h1>
+<img src="https://user-images.githubusercontent.com/100028421/160099110-7571a93c-a1a1-4f45-b969-d7f4dccc3b4c.png"/>
 
                             
 You can preview the theme to [see what it looks like](https://involts.github.io/jekyll-theme-fica/) or
