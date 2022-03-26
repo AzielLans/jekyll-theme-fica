@@ -4,6 +4,8 @@
 You can preview the theme to [see what it looks like](https://involts.github.io/jekyll-theme-fica/) or
 [download it today !](https://github.com/Involts/jekyll-theme-fica/zipball/master)
 
+[![Gem Version](https://badge.fury.io/rb/jekyll-theme-fica.svg)](https://badge.fury.io/rb/jekyll-theme-fica)
+
 ## Installation and first use
 
 Add this line to your Jekyll site's `Gemfile`:
