@@ -12,6 +12,12 @@ Add this line to your Jekyll site's `Gemfile`:
 gem "jekyll-theme-fica"
 ```
 
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+theme: jekyll-theme-fica
+```
+
 
 to install all the dependencies:
 
