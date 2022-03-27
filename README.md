@@ -19,6 +19,7 @@ And add this line to your Jekyll site's `_config.yml`:
 theme: jekyll-theme-fica
 ```
 
+
 to install all the dependencies:
 
     $ script/bootstrap
