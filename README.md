@@ -35,6 +35,27 @@ and run, to run your jekyll site:
    # _config.yml
    baseurl: [Your Repository Name]
   ```
+ If you want to create a external link in the headers Links remove `{{site.baseurl}}` on `_includes/Header.html`:
+
+Before:
+ ```
+          <div class="trigger"> 
+            <a class="page-link" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
+            <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
+            <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
+          </div>
+  ```
+
+  After:
+  ```
+            <div class="trigger"> 
+            <a class="page-link" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
+            <a class="page-link" href="{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
+            <a class="page-link" href="{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
+          </div>
+  ```        
+
+
 
 # Customizations
 
