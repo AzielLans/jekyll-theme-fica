@@ -7,6 +7,7 @@ show_descriptions: true # set to true to show descriptions
 baseurl: /jekyll-theme-fica
 # Before publishing the site to github-pages, replace the varable of baseur
 # if you have brought a doman remove the varable above 
+theme: jekyll-theme-fica
 # Links in Header
 header:
   header_name_1: Download
@@ -23,3 +24,4 @@ plugins:
  - jekyll-seo-tag
 exclude:
  - readme.md
+ - docs

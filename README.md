@@ -1,9 +1,10 @@
-<img src="logo.png" align="left" />
-<h1 align="left">Fica Theme</h1>
+<img src="https://user-images.githubusercontent.com/100028421/160099110-7571a93c-a1a1-4f45-b969-d7f4dccc3b4c.png"/>
 
+                            
 You can preview the theme to [see what it looks like](https://involts.github.io/jekyll-theme-fica/) or
 [download it today !](https://github.com/Involts/jekyll-theme-fica/zipball/master)
 
+[![Gem Version](https://badge.fury.io/rb/jekyll-theme-fica.svg)](https://badge.fury.io/rb/jekyll-theme-fica)
 ## Installation and first use
 
 Add this line to your Jekyll site's `Gemfile`:
@@ -38,7 +39,7 @@ and run, to run your jekyll site:
 
 ## Customizing '_config.yml'
 
-Cayman will respect the following variables, in your '_config.yml' file:
+Fica Theme will respect the following variables, in your '_config.yml' file:
 
 ```
 title: [The title of your site]
@@ -58,7 +59,9 @@ header:
 ```
 ## Customizing the Styles, Vriables and Color Scheme:
 if you like to override the default styles of the theme, go to '_sass/Custom-Styles.scss'.
+
 if you like to override the default Variables of the theme, go to '_sass/Custom-Variable.scss'.
+
 if you like to change the colors of the site, go to '_sass/Color_scheme.scss'.
 
 
@@ -74,15 +77,23 @@ Replace 'assets/img/fica_ad.png'.
 
 Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into _includes/Google-Analytics.html in your Jekyll site.
 
-# Contributing
+## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [Fica Theme](https://github.com/Involts/hello). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Interested in contributing to Fica Theme? We'd love your help. Fica Theme is an open source project, built one contribution at a time by users like you. See [the contributing file](docs/contributing.md) for instructions on how to contribute.
 
-# Development
+### Previewing the theme locally
 
-To set up your environment to develop this theme, run `script/bootstrap`.
+If you'd like to preview the theme locally (for example, in the process of proposing a change):
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `script/build` and open your browser at `http://localhost:4000/jekyll-theme-fica/` or 'http://localhost:4000(site.baseurl)'. This starts a Jekyll server using the Fica Theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+1. Clone down the theme's repository (`git clone https://github.com/Involts/jekyll-theme-fica`)
+2. `cd` into the theme's directory
+3. Run `script/bootstrap` to install the necessary dependencies
+4. Run `script/bootstrap` to start the preview server
+5. Visit [`localhost:4000`](http://localhost:4000) or [`localhost:4000/jekyll-theme-fica`](http://localhost:4000/jekyll-theme-fica) in your browser to preview the theme
+
+### Running tests
+
+The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/build`. You'll need to run `script/bootstrap` once before the test script will work.
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

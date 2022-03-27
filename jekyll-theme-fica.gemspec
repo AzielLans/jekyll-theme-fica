@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "jekyll-theme-fica"
-  spec.version = "0.1.2"
+  spec.version = "0.1.3"
   spec.authors = ["Involts"]
   spec.email = ["aziellan27@gmail.com"]
 
@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.metadata["plugin_type"] = "theme"
 
   spec.files = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r!^(assets|_(includes|layouts|sass)/|(LICENSE|README)((\.(txt|md|markdown)|$)))!i)
+    f.match(%r!^(assets|_(includes|layouts|sass)/|(LICENSE|README|logo)((\.(txt|md|markdown|png)|$)))!i)
   end
 
   spec.add_runtime_dependency "jekyll", ">= 3.5", "< 5.0"

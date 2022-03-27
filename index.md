@@ -3,10 +3,9 @@ layout: home
 site-title: Fica Theme | A modern theme with minimal look
 home: true
 ---
+<h1 align="center">Welcome to Fica Theme</h1>
 
-# Welcome to Fica Theme 
-
-# A modern theme with minimal look
+<h1 align="center">A modern theme with minimal look</h1>
 
 This the demo site.
 
@@ -125,7 +124,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 The Last Element
 ```
 
-See also [page]({% link docs/page.md %})
+See also [page]({% link page.md %})
 
 **Source code:**
 
