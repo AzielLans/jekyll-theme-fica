@@ -4,4 +4,4 @@ site-title: Post
 permalink: /Post/
 ---
 
-# Using `post_home` layout.
+### Using `post_home` layout.
