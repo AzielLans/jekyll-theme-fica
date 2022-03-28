@@ -19,7 +19,7 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $base-font-family;
   
     @include media-query($on-palm) {
       padding-right: 45px;
@@ -65,7 +65,7 @@
     color: $header-bg-color;
     text-align: center;
     font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $base-font-family;
     padding-bottom: 7px;
   }
   
@@ -76,8 +76,7 @@
     color: $header-bg-color;
     text-align: center;
     font-weight: lighter;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
+    font-family: $base-font-family;
     animation-name: des_app;
     animation-duration: 1s;
     -webkit-animation-timing-function: linear;
@@ -91,42 +90,8 @@
       100% {opacity: 100%;}
     }	
   }
-  
-  //Side Navigation
-  .sidenav {
-    width: 130px;
-    z-index: 1;
-    top: 110px;
-    left: 15px;
-    background: $menu-bdr-color;
-    overflow-x: hidden;
-    padding: 8px 0;
-    border-radius: 5%;
-  }
-  
-  .sidenav a {
-    display: list-item;
-    list-style-type: disc;
-    list-style-position: inside;
-    padding: 6px 8px 6px 16px;
-    font-size: 17px;
-    color: $link-base-color;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: $link-hover-color;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding-top: 15px;
-    }
-    .sidenav a {
-      font-size: 18px;
-    }
-  }
-  
+
+  // Site.nav 
   .site-nav {
     position: absolute;
     top: 9px;
@@ -182,7 +147,7 @@
       display: block;
       padding: 5px 10px;
       
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: $base-font-family;
   
       // Gaps between nav items, but not on the last one
       &:not(:last-child) {
@@ -224,7 +189,6 @@
       }
     }
   }
-  
   /**
    * Site footer
    */
@@ -233,37 +197,6 @@
     padding: $spacing-unit 0;
   }
   
-  .footer-heading {
-    @include relative-font-size(1.125);
-    margin-bottom: $spacing-unit / 2;
-  }
-  
-  .footer-col {
-    margin-bottom: $spacing-unit / 2;
-  }
-  
-  .footer-col-1,
-  .footer-col-2 {
-    width: calc(50% - (#{$spacing-unit} / 2));
-  }
-  
-  .footer-col-3 {
-    width: calc(100% - (#{$spacing-unit} / 2));
-  }
-  
-  @media screen and (min-width: $on-large) {
-    .footer-col-1 {
-      width: calc(35% - (#{$spacing-unit} / 2));
-    }
-  
-    .footer-col-2 {
-      width: calc(20% - (#{$spacing-unit} / 2));
-    }
-  
-    .footer-col-3 {
-      width: calc(45% - (#{$spacing-unit} / 2));
-    }
-  }
   .Links_footer {
     list-style: none;
     color: $link-base-color;
@@ -327,13 +260,14 @@
       text-decoration: none;
     }
   }
-  
+
   @media screen and (min-width: $on-medium) {
     .footer-col-wrapper {
       display: flex;
     }
   
     .footer-col {
+      margin-bottom: $spacing-unit / 2;
       width: calc(28% - (#{$spacing-unit} / 2));
       padding: 0 ($spacing-unit / 2);
   
@@ -348,6 +282,7 @@
       }
     }
     .footer-middle {
+      margin-bottom: $spacing-unit / 2;
       width: calc(35% - (#{$spacing-unit} / 2));
       padding: 0 ($spacing-unit / 2);
   
@@ -362,6 +297,7 @@
       }
     }
     .footer-last {
+      margin-bottom: $spacing-unit / 2;
       width: calc(35% - (#{$spacing-unit} / 2));
       padding: 0 ($spacing-unit / 2);
   
@@ -503,7 +439,7 @@
   }
 
  .btn {
-   padding: 7px 25px;
+   padding: 8px 25px;
    border: none;
    border-radius: 5px;
    cursor: pointer;
