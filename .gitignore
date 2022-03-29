@@ -5,8 +5,4 @@
 _site
 Gemfile.lock
 Help.md
-<<<<<<< Updated upstream
-script/gm_bld
-=======
-gm_bld
->>>>>>> Stashed changes
+bin

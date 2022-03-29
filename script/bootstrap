@@ -4,18 +4,3 @@ set -e
 
 gem install bundler
 bundle install
-
-while true; do
-
-read -p "Do you want to run your server ? (y/n) " yn
-
-case $yn in 
-	[yY] ) echo ok;
-         script/build;;
-	[nN] ) echo exiting...;
-		exit;;
-	* ) echo invalid response;
-esac
-
-
-done
