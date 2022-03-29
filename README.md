@@ -22,20 +22,21 @@ theme: jekyll-theme-fica
 
 
 to install all the dependencies:
-
+ ```
     $ script/bootstrap
-    
-    or
-    
+ ```    
+or
+ ```   
     $ bundle install
-
+ ```
 and run, to run your jekyll site:
-
+ ```
     $ script/build
-    
-    or
-    
+  ```   
+or
+  ```  
     $ bundle exec jekyll serve
+  ```  
 ## Note:
   Before publishing the site to github-pages, replace the varable of baseurl:
 
