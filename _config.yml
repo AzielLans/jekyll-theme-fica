@@ -8,6 +8,12 @@ baseurl: /jekyll-theme-fica
 # Before publishing the site to github-pages, replace the varable of baseur
 # if you have brought a doman remove the varable above 
 # Links in Header
+
+# if you run it locally:
+# theme: jekyll-theme-fica
+
+# if you using GitHub-Pages:
+remote_theme: Involts/jekyll-theme-fica
 header:
   header_name_1: Download
   header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
