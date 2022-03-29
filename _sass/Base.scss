@@ -51,7 +51,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $text-color;
+    background: $scroll_bar_bg_color;
     border-radius: 4px;
   }
 }
@@ -189,7 +189,7 @@ a {
 */
 blockquote {
   color: $blockquote-text-color;
-  border-left: 4px solid $border-color-01;
+  border-left: 4px solid $code-background-color;
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1.125);
   font-style: italic;
@@ -211,8 +211,9 @@ pre,
 code {
   font-family: $code-font-family;
   font-size: 0.9375em;
-  border: 1px solid $border-color-01;
+  border: 1px solid $code-background-color;
   border-radius: 4px;
+  font-weight: bold;
   background-color: $code-background-color;
 
   &::-webkit-scrollbar {
@@ -225,7 +226,7 @@ code {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $text-color;
+    background: $scroll_bar_bg_color;
     border-radius: 4px;
   }
 }
@@ -320,7 +321,7 @@ pre {
 }
 
 .github {
-  color: #f9f9f9;
+  color: $Github;
 }
 
 .svg-icon {
@@ -330,6 +331,10 @@ pre {
   fill: currentColor;
   padding: 5px 3px 2px 5px;
   vertical-align: text-bottom;
+}
+
+.gitlab {
+  color: $Github;
 }
 
 /**
@@ -347,13 +352,13 @@ table {
     width: 7px;
     height: 9px;
   }
-  
+
   &::-webkit-scrollbar-track {
-    background-color: $code-background-color;
+    background-color: $background-color;
   }
-  
+
   &::-webkit-scrollbar-thumb {
-    background: $text-color;
+    background: $scroll_bar_bg_color;
     border-radius: 4px;
   }
   tr {
@@ -394,4 +399,3 @@ dl {
     margin-inline-start: 40px;
   }
 }
-

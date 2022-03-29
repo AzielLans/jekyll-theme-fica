@@ -4,7 +4,7 @@ layout: default
 permalink: /page/
 ---
 
-Using "default` layout.
+Using `default` layout.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.
 

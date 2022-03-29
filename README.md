@@ -1,10 +1,10 @@
 <img src="https://user-images.githubusercontent.com/100028421/160099110-7571a93c-a1a1-4f45-b969-d7f4dccc3b4c.png"/>
 
-                            
 You can preview the theme to [see what it looks like](https://involts.github.io/jekyll-theme-fica/) or
-[download it today !](https://github.com/Involts/jekyll-theme-fica/zipball/master)
+[download it today!](https://github.com/Involts/jekyll-theme-fica/zipball/master)
 
 [![Gem Version](https://badge.fury.io/rb/jekyll-theme-fica.svg)](https://badge.fury.io/rb/jekyll-theme-fica)
+
 ## Installation and first use
 
 Add this line to your Jekyll site's `Gemfile`:
@@ -19,6 +19,7 @@ And add this line to your Jekyll site's `_config.yml`:
 theme: jekyll-theme-fica
 ```
 
+<<<<<<< Updated upstream
 
 
 to install all the dependencies:
@@ -37,35 +38,73 @@ or
   ```  
     $ bundle exec jekyll serve
   ```  
-## Note:
-  Before publishing the site to github-pages, replace the varable of baseurl:
+=======
+to install all the dependencies:
 
+```
+   $ script/bootstrap
+```
+
+or
+
+```
+   $ bundle install
+```
+
+and run, to run your jekyll site:
+
+```
+   $ script/build
+```
+
+or
+
+```
+  $ bundle exec jekyll serve
+```
+
+>>>>>>> Stashed changes
+## Note:
+
+<<<<<<< Updated upstream
   if you have brought a doman remove the varable below: 
   ```
    # _config.yml
    baseurl: /jekyll-fica-theme
   ```
  If you want to create a external link in the headers Links remove `{{site.baseurl}}` on `_includes/Header.html`:
+=======
+Before publishing the site to github-pages, replace the varable of baseurl:
+
+if you have brought a doman remove the varable below:
+
+```
+ # _config.yml
+ baseurl: /jekyll-fica-theme
+```
+
+If you want to create a external link in the headers Links remove `{{site.baseurl}}` on `_includes/Header.html`:
+>>>>>>> Stashed changes
 
 Before:
- ```
-          <div class="trigger"> 
-            <a class="page-link" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
-            <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
-            <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
-          </div>
-  ```
 
-  After:
-  ```
-            <div class="trigger"> 
-            <a class="page-link" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
-            <a class="page-link" href="{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
-            <a class="page-link" href="{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
-          </div>
-  ```        
+```
+         <div class="trigger">
+           <a class="page-link" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
+           <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
+           <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
+         </div>
+```
 
+After:
 
+```
+          <div class="trigger">
+          <a class="page-link" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
+          <a class="page-link" href="{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
+          <a class="page-link" href="{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
+        </div>
+```
 
 # Customizations
 
@@ -79,7 +118,9 @@ author: [The auther of the site]
 name: [The owner of the site]
 description: [A short description of your site's purpose]
 ```
+
 Change the links of your site header:
+
 ```
 header:
   header_name_1: Download
@@ -89,22 +130,43 @@ header:
   header_name_3: About
   header_link_3: /About/
 ```
+
 ## Customizing the Styles, Vriables and Color Scheme:
+<<<<<<< Updated upstream
 if you like to override the default styles of the theme, go to `_sass/Custom-Styles.scss`.
 
 if you like to override the default Variables of the theme, go to `_sass/Custom-Variable.scss`.
 
 if you like to change the colors of the site, go to `_sass/Color_scheme.scss`.
+=======
 
+if you like to override the default styles of the theme, go to `_sass/Custom-Styles.scss`.
 
+if you like to override the default Variables of the theme, go to `_sass/Custom-Variable.scss`.
+
+if you like to change the colors of the Dark Theme in the site, go to `_sass/themes/Dark_Theme.scss`.
+>>>>>>> Stashed changes
+
+if you like to change the colors of the Light Theme in the site, go to `_sass/themes/Light_Theme.scss`.
+
+Want to change [the themes?](#how-to-change-dark-mode-to-light-mode)
 ## How to replace the logo on the header ?
 
 Replace logo.png at the top of your site.
-Make sure that the logo is 16x16 px to avoid overlapping the title.   
+Make sure that the logo is 16x16 px to avoid overlapping the title.
 
 ## how to replace the pictue at the homepage ?
 
 Replace `assets/img/fica_ad.png`
+<<<<<<< Updated upstream
+=======
+
+## How to change dark mode to light mode ?
+
+Replace ` @import "themes/Dark_Theme", "Initialize"; ` to `@import "themes/Light_Theme", "Initialize"; ` from `assests/css/Styles.scss`:
+
+
+>>>>>>> Stashed changes
 # Customizing Google Analytics code
 
 Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/Google-Analytics.html` in your Jekyll site.
@@ -126,7 +188,7 @@ If you'd like to preview the theme locally (for example, in the process of propo
 ### Running tests
 
 The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/build`. You'll need to run `script/bootstrap` once before the test script will work.
+
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-

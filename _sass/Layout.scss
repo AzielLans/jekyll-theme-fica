@@ -13,6 +13,16 @@
     position: relative;
   }
   
+  .site-header-home {
+    background-color: $home-header-title-color;
+    border-top: 5px solid $home-header-title-color;
+    border-bottom: 5px solid $home-header-title-color;
+    min-height: $spacing-unit * 1.865;
+    line-height: $base-line-height * $base-font-size * 2.25;
+  
+    // Positioning context for the mobile navigation icon
+    position: relative;
+  }
   .site-title {
     @include relative-font-size(1.625);
     font-weight: 690;
@@ -27,7 +37,7 @@
   
     &,
     &:visited {
-      color: $site-title-color;
+      color: $text-color;
     }
   
     &:hover {
@@ -52,7 +62,7 @@
   }
   .page-header {
     border-top: 10px solid $home-header-title-color;
-    color: $site-title-color;
+    color: $text-color;
     background-color: $home-header-title-color;
     border-bottom: 5px solid $home-header-title-color;
     padding-bottom: 10px;
@@ -165,6 +175,7 @@
       float: right;
       border: none;
       background-color: inherit;
+
   
       label[for="nav-trigger"] {
         display: none;
@@ -211,11 +222,11 @@
       padding-left: 0;
       padding-bottom: 4px;
       font-size: larger;
-      color: #f0ffff;
+      color: $text-color;
     }
   
     &:first-child:hover {
-      color: #f0ffff;
+      color: $text-color;
     }
   
     &:last-child {
@@ -232,7 +243,7 @@
   }
   .Product_footer {
     list-style: none;
-    color: #f0ffff;
+    color: $text-color;
     width: calc(100% - (#{$spacing-unit} / 2));
     padding: 0 ($spacing-unit / 2);
   
@@ -241,12 +252,12 @@
       padding-left: 0;
       padding-bottom: 1px;
       font-size: 0.6cm;
-      color: #f0ffff;
+      color: $text-color;
       font-weight: 900;
     }
   
     &:last-child:hover {
-      color: #f0ffff;
+      color: $text-color;
     }
   
     &:last-child {
@@ -256,7 +267,7 @@
     }
   
     &:hover {
-      color: #f0ffff;
+      color: $text-color;
       text-decoration: none;
     }
   }
@@ -340,7 +351,7 @@
   
   .post-meta {
     font-size: $small-font-size;
-    color: $site-title-color;
+    color: $text-color;
   }
   
   .post-link {
@@ -421,7 +432,7 @@
         border: 1px solid transparent;
   
         &.pager-edge {
-          color: $border-color-01;
+          color: $code-background-color;
           border: 1px dashed;
         }
       }
@@ -460,3 +471,4 @@
      border-color: $btn-color-hover;
    }
  }
+ 

@@ -1,16 +1,11 @@
 ---
 ---
 
-@import 
-  "Color_scheme",
-  "Initialize";
+@import "themes/Dark_Theme", "Initialize"; 
 
-  .site-title::before {
-    content: url("{{site.baseurl}}/logo.png");
-    display: inline-block;
-    position: relative;
-    width: 37px;
-    top: 7px;
-  }  
-
-  
+.site-title::before {
+  content: url("{{site.baseurl}}/logo.png");
+  position: relative;
+  width: 37px;
+  top: 7px;
+}
