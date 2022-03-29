@@ -33,7 +33,7 @@ and run, to run your jekyll site:
   if you have brought a doman remove the varable below: 
   ```
    # _config.yml
-   baseurl: [Your Repository Name]
+   baseurl: /jekyll-fica-theme
   ```
  If you want to create a external link in the headers Links remove `{{site.baseurl}}` on `_includes/Header.html`:
 
@@ -59,9 +59,9 @@ Before:
 
 # Customizations
 
-## Customizing '_config.yml'
+## Customizing `_config.yml`
 
-Fica Theme will respect the following variables, in your '_config.yml' file:
+Fica Theme will respect the following variables, in your `_config.yml` file:
 
 ```
 title: [The title of your site]
@@ -80,11 +80,11 @@ header:
   header_link_3: /About/
 ```
 ## Customizing the Styles, Vriables and Color Scheme:
-if you like to override the default styles of the theme, go to '_sass/Custom-Styles.scss'.
+if you like to override the default styles of the theme, go to `_sass/Custom-Styles.scss`.
 
-if you like to override the default Variables of the theme, go to '_sass/Custom-Variable.scss'.
+if you like to override the default Variables of the theme, go to `_sass/Custom-Variable.scss`.
 
-if you like to change the colors of the site, go to '_sass/Color_scheme.scss'.
+if you like to change the colors of the site, go to `_sass/Color_scheme.scss`.
 
 
 ## How to replace the logo on the header ?
@@ -94,10 +94,10 @@ Make sure that the logo is 16x16 px to avoid overlapping the title.
 
 ## how to replace the pictue at the homepage ?
 
-Replace 'assets/img/fica_ad.png'.
+Replace `assets/img/fica_ad.png`
 # Customizing Google Analytics code
 
-Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into _includes/Google-Analytics.html in your Jekyll site.
+Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/Google-Analytics.html` in your Jekyll site.
 
 ## Contributing
 
