@@ -16,11 +16,12 @@ gem "jekyll-theme-fica"
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
+# if you run it locally:
 theme: jekyll-theme-fica
+
+# if you using GitHub-Pages:
+remote_theme: Involts/jekyll-theme-fica
 ```
-
-
-
 to install all the dependencies:
  ```
     $ script/bootstrap
