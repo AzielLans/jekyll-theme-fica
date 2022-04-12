@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.metadata["plugin_type"] = "theme"
 
   spec.files = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r!^(assets|js|docs|bin|_(includes|layouts|sass|post)/|(LICENSE|README|logo)((\.(txt|md|markdown|png)|$)))!i)
+    f.match(%r!^(assets|js|docs|bin|.github|post|_(includes|layouts|sass|posts)/|(LICENSE|README|logo|404)((\.(txt|md|markdown|png|html)|$)))!i)
   end
 
   spec.add_runtime_dependency "jekyll", ">= 3.5", "< 5.0"
