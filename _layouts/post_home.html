@@ -1,0 +1,81 @@
+---
+layout: default
+---
+<div class="home">
+  {%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  <h1>Posts</h1>
+
+  {%- if site.paginate -%}
+  {% assign posts = paginator.posts %}
+  {% else %}
+  {% assign posts = site.posts %}
+  {% endif %}
+
+
+  {%- if posts.size > 0 -%}
+  {%- if page.list_title -%}
+  <h2 class="post-list-heading">{{ page.list_title }}</h2>
+  {%- endif -%}
+  <ul class="post-list">
+    {%- assign date_format = site.fica.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts -%}
+    <li>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+        <span class="post-meta text-muted">{{ post.date | date: date_format }}</span>
+      </h3>
+      {%- if site.show_descriptions -%}
+      {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  {%- if site.paginate -%}
+  <ul class="post-nav">
+    <li>
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}"">
+        <svg class="post-nav-svg">
+          <use xlink:href="{{ 'assets/fica-icons.svg#arw-back' | relative_url
+            }}"></use>
+        </svg>
+      </a>
+      {% else %} 
+      <a>
+        <svg class="post-nav-svg disable-svg">
+          <use xlink:href="{{ 'assets/fica-icons.svg#arw-back' | relative_url
+            }}"></use>
+        </svg>
+      </a>
+      {% endif %}
+      </li>
+        <li class="post-nav-num">{{ paginator.page }} / {{ paginator.total_pages }}</li>
+      <li>
+        {%- if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}">
+          <svg class="post-nav-svg">
+            <use xlink:href="{{ 'assets/fica-icons.svg#arw-front' | relative_url
+              }}"></use>
+          </svg>
+        </a>
+        {%- else %}
+        <a>
+          <svg class="post-nav-svg disable-svg">
+            <use xlink:href="{{ 'assets/fica-icons.svg#arw-front' | relative_url
+              }}"></use>
+          </svg>
+        </a>
+        {%- endif %}
+        </li>
+      </ul>
+      {%- endif %}
+
+      {%- endif -%}

@@ -1,0 +1,42 @@
+---
+---
+
+@import "jekyll-theme-fica";
+
+
+.site-title::before {
+    content: url("{{site.baseurl}}/logo.png");
+    position: relative;
+    width: 37px;
+    top: 7px;
+    animation-name: des_app;
+    animation-duration: $animation-main;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  
+    @keyframes des_app {
+      0% {
+        opacity: 0%;
+      }
+  
+      20% {
+        opacity: 20%;
+      }
+  
+      50% {
+        opacity: 50%;
+      }
+  
+      70% {
+        opacity: 70%;
+      }
+  
+      90% {
+        opacity: 90%;
+      }
+  
+      100% {
+        opacity: 100%;
+      }
+    }
+  }

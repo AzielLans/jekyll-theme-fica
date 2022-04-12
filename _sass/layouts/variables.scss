@@ -1,0 +1,89 @@
+@charset "utf-8";
+// 
+// Fonts
+// 
+$text-font-family: "Roboto",
+sans-serif !default;
+$code-font-family: "Cascadia Code",
+sans-serif;
+
+$text-font-weight: 340 !default;
+
+// 
+// Table
+// 
+$table-text-align: left !default;
+
+// 
+// Headers
+// 
+//
+$h2-h6_fnt-wght: 450;
+$h1_fnt-wght: 700;
+$h1_fnt-sze: 35px;
+
+$font-size: 17px !default;
+$small-font-size: $font-size * 0.875 !default;
+
+$line-height: 1.5 !default;
+$spacing-unit: 30px !default;
+
+// 
+// Site banner
+// 
+$site-banner-title-fnt-sze: 2.2rem;
+$site-banner-description-fnt-sze: 1.2rem;
+$site-banner-picture-sze_wdth: 100%; //make sure that the width and height are the same
+$site-banner-picture-sze_hght: 100%; //make sure that the width and height are the same
+
+// 
+// Transitions
+// 
+$transition-btn: color 0.2s, background-color 0.2s, border-color 0.2s ease-in-out;
+$transition-links: color 0.3s ease-in-out;
+$tansitions-page-bar: background-color 0.3s, fill 0.3s ease-in-out;
+
+// 
+// Animations
+// 
+$animation-site-pic: 2s; //animations for banner-pic
+$animation-main: 1s; //animations for banner description and the body of the site.
+
+// 
+// Content width
+// 
+$content-width: 800px !default;
+
+$mobile-width: 710px !default;
+$pc-width: 800px !default;
+
+// 
+// Media queries
+// 
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@mixin relative-font-size($ratio) {
+    font-size: #{$ratio}rem;
+}
+
+@mixin large {
+    @media screen and (min-width: #{$large-breakpoint}) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media screen and (max-width: #{$medium-breakpoint}) {
+        @content;
+    }
+}

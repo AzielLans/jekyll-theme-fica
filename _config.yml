@@ -1,0 +1,66 @@
+#
+# The Site Configuration
+#
+
+# Import the theme
+theme: jekyll-theme-fica
+
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
+baseurl: /jekyll-theme-fica
+
+title: Fica Theme
+
+author: Involts
+
+description: A modern theme with minimal look.
+
+google_analytics: true
+show_descriptions: true # set to true to show descriptions
+
+permalink: /Posts/:title/
+
+header:
+  header_name_1: Download
+  header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+  header_name_2: Post
+  header_link_2: /Post/
+  header_name_3: About
+  header_link_3: /About/
+
+
+fica:
+  date_format: "%b %-d, %Y"
+
+# Pagination
+paginate: true
+paginate: 3
+paginate_path: "/post/page:num/"
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - bin
+  - README.md
+  - LICENSE
+  - docs
+
+  #---------------The options BELLOW are not recommended to be modified------------------#
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
