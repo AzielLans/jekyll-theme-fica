@@ -2,8 +2,11 @@
 # The Site Configuration
 #
 
-# Import the theme
-theme: jekyll-theme-fica
+# if you run it locally:
+# theme: jekyll-theme-fica
+
+# if you using GitHub-Pages:
+remote_theme: Involts/jekyll-theme-fica
 
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
 # and doesn't have a custom domain.
