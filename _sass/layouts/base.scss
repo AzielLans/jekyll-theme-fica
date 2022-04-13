@@ -154,6 +154,7 @@ ol {
 a {
   text-decoration: none;
   transition: $transition-links;
+  color: $link-visited-color;
 
   &:visited {
     color: $link-visited-color;
@@ -242,6 +243,12 @@ code {
 
 code {
   padding: 1px 5px;
+  
+  a {
+    color: inherit !important;
+    border-bottom: none !important;
+    pointer-events: none;
+  }
 }
 
 pre {
@@ -302,9 +309,16 @@ pre {
     user-select: none;
   }
 
-  /* set the dollar sign to non-selectable */
+  //  set the dollar sign to non-selectable 
   .gp {
     user-select: none;
+  }
+  
+  table {
+    td pre {
+      overflow: visible; // Fixed iOS safari overflow-x 
+      word-break: normal;// Fixed iOS safari linenos code break
+    }
   }
 
   .highlighter-rouge & {

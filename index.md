@@ -142,7 +142,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 The Last Element
 ```
 
-See also [page]({% link page.md %})
+See also [page]({{ site.baseurl}}{% link page.md %})
 
 **Source code:**
 
