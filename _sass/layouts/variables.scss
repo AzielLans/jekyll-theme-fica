@@ -4,8 +4,8 @@
 // 
 $text-font-family: "Roboto",
 sans-serif !default;
-$code-font-family: "Cascadia Code",
-sans-serif;
+$code-font-family: "Noto Sans",
+sans-serif !default;
 
 $text-font-weight: 340 !default;
 
@@ -20,9 +20,9 @@ $table-text-align: left !default;
 //
 $h2-h6_fnt-wght: 450;
 $h1_fnt-wght: 700;
-$h1_fnt-sze: 35px;
+$h1_fnt-sze: 2.4rem;
 
-$font-size: 17px !default;
+$font-size: 1rem !default;
 $small-font-size: $font-size * 0.875 !default;
 
 $line-height: 1.5 !default;
@@ -31,23 +31,23 @@ $spacing-unit: 30px !default;
 // 
 // Site banner
 // 
-$site-banner-title-fnt-sze: 2.2rem;
-$site-banner-description-fnt-sze: 1.2rem;
-$site-banner-picture-sze_wdth: 100%; //make sure that the width and height are the same
-$site-banner-picture-sze_hght: 100%; //make sure that the width and height are the same
+$site-banner-title-fnt-sze: 50px;
+$site-banner-description-fnt-sze: 18px;
+$site-banner-picture-sze_wdth: 60%; //make sure that the width and height are the same
 
 // 
 // Transitions
 // 
-$transition-btn: color 0.2s, background-color 0.2s, border-color 0.2s ease-in-out;
+$transition-btn: all 0.2s ease-in-out;
 $transition-links: color 0.3s ease-in-out;
-$tansitions-page-bar: background-color 0.3s, fill 0.3s ease-in-out;
+$tansitions-page-bar: all 0.3s ease-in-out;
 
 // 
 // Animations
 // 
 $animation-site-pic: 2s; //animations for banner-pic
 $animation-main: 1s; //animations for banner description and the body of the site.
+$animation-left: 250ms;
 
 // 
 // Content width
@@ -57,18 +57,32 @@ $content-width: 800px !default;
 $mobile-width: 710px !default;
 $pc-width: 800px !default;
 
-// 
-// Media queries
-// 
+//                                     // 
+// ---------- site queries ---------- // 
+//                                   //      
+
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
 
+@mixin animation-fade-in($speed) {
+    opacity: 0;
+    animation: fade-in 1s linear forwards;
+    animation-delay: #{$speed}s;
+    -webkit-animation-delay: #{$speed}s;
+}
+
+
+
 @mixin relative-font-size($ratio) {
     font-size: #{$ratio}rem;
 }
+
+//                                      // 
+// ---------- Media queries ---------- // 
+//                                    //   
 
 @mixin large {
     @media screen and (min-width: #{$large-breakpoint}) {
@@ -85,5 +99,132 @@ $pc-width: 800px !default;
 @mixin small {
     @media screen and (max-width: #{$medium-breakpoint}) {
         @content;
+    }
+}
+
+//                                 //
+//---------- scss mixin --------- //
+//                               //
+
+@mixin text-muted {
+    color: $footer-head-link-color;
+}
+
+@mixin text-unmuted {
+    color: $text-color;
+}
+
+@mixin footer-wrapper {
+    margin-bottom: $spacing-unit / 2;
+    width: calc(28% - (#{$spacing-unit} / 2));
+    padding: 0 ($spacing-unit / 2);
+
+    &:first-child {
+        padding-right: $spacing-unit / 2;
+        padding-left: 0;
+    }
+
+    &:last-child {
+        padding-right: 0;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+@mixin prompt($gf-icon, $gf-color, $bg-color, $fnt-fam) {
+    border-radius: 5px;
+    padding: 0.80rem 1.2rem;
+    font-style: normal;
+    color: $text-color;
+    font-weight: 400;
+    display: flex;
+    border-left: 6px solid $gf-color;
+    background-color: $bg-color;
+    font-size: 0.975rem;
+
+    &::before {
+        content: $gf-icon;
+        font-family: $fnt-fam;
+        color: $gf-color;
+        font-size: 34px;
+        line-height: 1;
+        padding-right: 10px;
+        padding-bottom: 13px;
+    }
+}
+
+@mixin horizontal-scroll {
+    &::-webkit-scrollbar {
+        width: 7px;
+        height: 9px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $code-background-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $scroll_bar_bg_color;
+        border-radius: 4px;
+    }
+
+}
+
+
+//                                 //
+//---------- Animations --------- //
+//                               //
+
+
+@keyframes left-animation {
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes BTT-Entrance {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes BTT-Exit {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+@keyframes slide {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-up {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
     }
 }

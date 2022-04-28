@@ -121,7 +121,7 @@ Make sure that the logo is 36x36 pixels to avoid overlapping the title.
 
 ## how to replace the pictue at the homepage ?
 
-Replace `assets/img/fica_ad.png`
+Replace `assets/img/homepage-pic.png`
 # Customizing Google Analytics code
 
 Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/Google-Analytics.html` in your Jekyll site.

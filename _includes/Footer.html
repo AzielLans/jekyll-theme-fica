@@ -1,5 +1,4 @@
 <footer class="site-footer h-card">
-    <data class="u-url" href="{{ "{{site.baseurl}}/" | relative_url }}"></data>
     <div class="wrapper">
   
       <div class="footer-col-wrapper">
@@ -66,7 +65,21 @@
           <li class="Product_footer">{{site.description}}</li>
         </div>
       </div>
-    </div>
-  
+      {%- if site.show-footer-copyright -%}
+      <div class="footer-info text-muted">
+        <span>
+          © {{ 'now' | date: "%Y " }}
+          <a href="{{ site.socials.auther-link }}"> {{ site.socials.name }}</a>
+          Some rights reserved.
+        </span>
+        <span>
+          Powered by
+          <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+        with
+          <a href="https://github.com/Involts/jekyll-theme-fica" target="_blank" rel="noopener">jekyll-theme-fica</a>
+        </span>
+      </div> 
+      {%- endif -%}  
+    </div> 
   </footer>
   

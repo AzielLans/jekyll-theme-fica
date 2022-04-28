@@ -14,31 +14,43 @@ baseurl: /jekyll-theme-fica
 
 title: Fica Theme
 
-author: Involts
-
 description: A modern theme with minimal look.
 
-google_analytics: true
 show_descriptions: true # set to true to show descriptions
 
+show-footer-copyright: true # set to true to show footer copyright
+
 permalink: /Posts/:title/
+date_format: "%b %-d, %Y"
 
 header:
-  header_name_1: Download
-  header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
-  header_name_2: Post
-  header_link_2: /post/
-  header_name_3: About
-  header_link_3: /About/
+    external_link_1: true # if false, it adds the baseurl of the site
+    header_name_1: Download
+    header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
 
+    external_link_2: false # if false, it adds the baseurl of the site
+    header_name_2: Post
+    header_link_2: /Post/
+    
+    external_link_3: false # if false, it adds the baseurl of the site
+    header_name_3: About
+    header_link_3: /About/
 
-fica:
-  date_format: "%b %-d, %Y"
+google_analytics: 
+  enabled: true # if false, it disables Google Analytics
+  id:           # fill in your Google Analytics ID    
+
+socials:
+  # Change Involts to your full name.
+  name: Involts
+  # it also be the copyright owner's link
+  auther-link: https://github.com/Involts
+
 
 # Pagination
 paginate: true
 paginate: 3
-paginate_path: "/post/page:num/"
+paginate_path: "/Post/page:num/"
 
 
 plugins:
@@ -53,6 +65,9 @@ exclude:
   - README.md
   - LICENSE
   - docs
+  - RubyGems
+  - gm_bld
+  - gitignore
 
   #---------------The options BELLOW are not recommended to be modified------------------#
 

@@ -2,6 +2,7 @@
 layout: post
 site-title: Getting Started
 author: Involts
+pin: true
 ---
 
 # Prerequisites
@@ -18,22 +19,50 @@ Follow the instructions in [jekyll Docs](https://jekyllrb.com/docs/installation/
 
 ## Option 1. Using RubyGems
 
-Copy the Gemfile `gem 'jekyll-theme-fica', '~> 0.1.5'`, paste it on the `Gemfile` file then run `bin/build`
+Copy the Gemfile `gem 'jekyll-theme-fica', '~> 0.2.0'`, paste it on the `Gemfile` file then run 
 
-> `bin/build` installs the dependencies and runs the server locally.
-{: .prompt-info }
+```bash
+$ bin/run insdep
+```
+{: .nolineno}
+or
+```bash
+$ bundle install
+```
+{: .nolineno}
+
+and run
+
+```bash
+$ bin/run server
+```
+{: .nolineno}
+or
+```bash
+$ bundle exec jekyll serve
+```
+{: .nolineno}
+
+
+
 
 ## Option 2. Forking Github
 
 name it `<GH_USERNAME>.github.io`, where `GH_USERNAME` represents your GitHub username.
 
-and then run:
+ then run:
 
+```bash
+$ bin/run insdep
 ```
-$ bin/build
+{: .nolineno}
+
+and run
+
+```bash
+$ bin/run server
 ```
-> `bin/build` installs the dependencies and runs the server locally.
-{: .prompt-info }
+{: .nolineno}
 
 # Usage
 
@@ -45,24 +74,35 @@ $ bin/build
 
 Fica Theme will respect the following variables, in your `_config.yml` file:
 
-```
+```yml
 title: [The title of your site]
-author: [The auther of the site]
-name: [The owner of the site]
 description: [A short description of your site's purpose]
+
+socials:
+  # Change Involts to your full name.
+  name: [The auther of the site]
+  # it also be the copyright owner's link
+  auther-link: [Link of the auther]
 ```
 
 Change the links of your site header:
 
 ```yml
 header:
-  header_name_1: Download
-  header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
-  header_name_2: Post
-  header_link_2: /Post/
-  header_name_3: About
-  header_link_3: /About/
+    external_link_1: true # if false, it adds the baseurl of the site
+    header_name_1: Download
+    header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+
+    external_link_2: false # if false, it adds the baseurl of the site
+    header_name_2: Post
+    header_link_2: /Post/
+    
+    external_link_3: false # if false, it adds the baseurl of the site
+    header_name_3: About
+    header_link_3: /About/
 ```
+
+Change the links of your site header:
 
  > If you want to create a external link in the headers Links remove `{{site.baseurl}}` on `_includes/Header/html` **BELLOW**
  {: .prompt-info }
@@ -70,25 +110,31 @@ header:
 
 {% raw %}
 ```diff
-  <div class="trigger">
-    <a class="page-link" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
--    <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_2}}">{{site.header.header_name_2}}<a>
--    <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
-+     <a class="page-link" href="{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
-+     <a class="page-link" href="{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
-  </div>
+header:
+    external_link_1: true # if false, it adds the baseurl of the site
+    header_name_1: Download
+    header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+-   external_link_2: false # if false, it adds the baseurl of the site
++   external_link_2: true # if false, it adds the baseurl of the site
+    header_name_2: Post
+    header_link_2: /Post/
+    
+-   external_link_3: false # if false, it adds the baseurl of the site
++   external_link_3: true # if false, it adds the baseurl of the site
+    header_name_3: About
+    header_link_3: /About/
   ```
 {% endraw %}  
 
 #  Upgrading
   Depending on how you use the theme:
 
-- if you are using the [theme gem](https://rubygems.org/gems/jekyll-theme-fica). There will be `gem 'jekyll-theme-fica'` in the `Gemfile`.  
+- if you are using the [theme gem](https://rubygems.org/gems/jekyll-theme-fica). Run:
 
-```diff
--  gem 'jekyll-theme-fica', '~> 0.1.4'
-+  gem 'jekyll-theme-fica', '~> 0.1.8'
+```bash
+$ bin/run upgrade
 ```
+{: .nolineno}
 
 Please refer to the [Upgrade Guide](https://github.com/Involts/jekyll-theme-fica/wiki/Theme-Upgrade-Guide) to keep your repo’s files in sync with the latest version of the theme.
 
