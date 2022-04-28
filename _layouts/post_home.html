@@ -105,6 +105,7 @@ layout: default
     </li>
     {%- endfor -%}
   </div>
+  {%- endif %}
 
   {%- if site.paginate -%}
   <ul class="post-nav">
@@ -134,7 +135,7 @@ layout: default
         </span>
       </a>
       {%- else %}
-      <a>if
+      <a>
         <span class="material-icons-round post-nav-svg disable-svg">
           chevron_right
         </span>
