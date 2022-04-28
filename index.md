@@ -3,147 +3,170 @@ layout: home
 home: true
 ---
 
-<h1 align="center">Welcome to Fica Theme</h1>
+<img src="https://user-images.githubusercontent.com/100028421/160099110-7571a93c-a1a1-4f45-b969-d7f4dccc3b4c.png"/>
 
-<h1 align="center">A modern theme with minimal look</h1>
+You can preview the theme to [see what it looks like](https://involts.github.io/jekyll-theme-fica/) or
+[download it today!](https://github.com/Involts/jekyll-theme-fica/zipball/master)
 
-This the demo site.
+[![Gem Version](https://badge.fury.io/rb/jekyll-theme-fica.svg)](https://badge.fury.io/rb/jekyll-theme-fica)
 
-Using `home` layout.
+## Installation and first use
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+Add this line to your Jekyll site's `Gemfile`:
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require("./lang/" + l);
-  return true;
-};
+```ruby
+gem "jekyll-theme-fica"
 ```
 
-```html
-# Html code with syntax highlighting
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-  <title>{{page.site-title}}</title>
-</head>
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+# if you run it locally:
+theme: jekyll-theme-fica
+
+# if you using GitHub-Pages:
+remote_theme: Involts/jekyll-theme-fica
 ```
 
-# Prompts 
+to install all the dependencies:
 
-> An example showing the `Tip` Prompt 
-{: .prompt-tip }
-
-
-> An example showing the `Info` Prompt 
-{: .prompt-info }
-
-> An example showing the `Warning` Prompt 
-{: .prompt-warning }
-
-> An example showing the `Danger` Prompt 
-{: .prompt-danger }
-
-
-#### Header 4
-
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-### Tables
-
-| Title 1               | Title 2               | Title 3               | Title 4               |
-| --------------------- | --------------------- | --------------------- | --------------------- |
-| lorem                 | lorem ipsum           | lorem ipsum dolor     | lorem ipsum dolor sit |
-| lorem ipsum dolor sit | lorem ipsum dolor sit | lorem ipsum dolor sit | lorem ipsum dolor sit |
-| lorem ipsum dolor sit | lorem ipsum dolor sit | lorem ipsum dolor sit | lorem ipsum dolor sit |
-| lorem ipsum dolor sit | lorem ipsum dolor sit | lorem ipsum dolor sit | lorem ipsum dolor sit |
-
-### There's a horizontal rule below
-
----
-
-### Here is an unordered list:
-
-- Item foo
-- Item bar
-- Item baz
-- Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
+```bash
+$ bin/run insdep
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+{: .nolineno }
+
+or
+
+```bash
+$ bundle install
+```
+{: .nolineno }
+
+and run your jekyll site:
+
+```bash
+$ bin/run server
+```
+{: .nolineno }
+
+or
+
+```bash
+$ bundle exec jekyll serve
+```
+{: .nolineno }
+
+## Note:
+
+Before publishing the site to github-pages, replace the varable of baseurl:
+
+if you have brought a doman remove the varable below:
+
+```yml
+ # _config.yml
+ baseurl: /jekyll-fica-theme
 ```
 
+# Customizations
+
+## Customizing `_config.yml`
+
+Fica Theme will respect the following variables, in your `_config.yml` file:
+
+```yml
+title: [The title of your site]
+description: [A short description of your site's purpose]
+
+socials:
+  # Change Involts to your full name.
+  name: [The auther of the site]
+  # it also be the copyright owner's link
+  auther-link: [Link of the auther]
 ```
-The Last Element
+
+Change the links of your site header:
+
+```yml
+header:
+    external_link_1: true # if false, it adds the baseurl of the site
+    header_name_1: Download
+    header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+
+    external_link_2: false # if false, it adds the baseurl of the site
+    header_name_2: Post
+    header_link_2: /Post/
+    
+    external_link_3: false # if false, it adds the baseurl of the site
+    header_name_3: About
+    header_link_3: /About/
 ```
 
-See also [page]({{ site.baseurl}}{% link page.md %})
+## `bin/run` testing suite command:
 
-**Source code:**
+### Usage:
 
-<a href="https://github.com/Involts/jekyll-theme-fica" class="btn">Github</a>
+   `bin/run` **subcommand**
+
+  | Subcommand       | Description
+  | -----------------|---------------------------------------|
+  | `upgrade` , `u`  |  Upgrades `jekell-theme-fica` to the latest version |
+  | `help` , `h`     |  Print help.                          |
+  | `version` , `v`  |   Print version.                      |
+  | `server` , `s`   |  Runs the server locally              |
+  | `insdep` , `idp` |  Installs all the dependencies        |
+
+## Customizing the Styles, Vriables and Color Scheme:
+
+if you like to override the default styles of the theme, go to `_sass/Custom/Styles.scss`.
+
+if you like to override the default Variables of the theme, go to `_sass/Custom/Variable.scss`.
+
+if you like to change the colors of the Dark Theme in the site, go to `_sass/themes/dark theme/Dark_Theme.scss`.
+
+if you like to change the colors of the Light Theme in the site, go to `_sass/themes/dark theme/Light_Theme.scss`.
+
+Want to change [the themes?](#how-to-change-dark-mode-to-light-mode)
+
+## How to replace the logo on the header ?
+
+Replace logo.png at the top of your site.
+Make sure that the logo is 36x36 pixels to avoid overlapping the title.
+
+## how to replace the pictue at the homepage ?
+
+Replace `assets/img/homepage-pic.png`
+
+# Customizing Google Analytics code
+
+Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/Google-Analytics.html` in your Jekyll site.
+
+## how to change dark mode to light mode
+
+Replace:
+
+```diff
+- "themes/dark theme/theme-dark",
+
++ "themes/light theme/theme-light",
+```
+
+in `_sass/jekyll-theme-fica.scss`.
+
+## Contributing
+
+Interested in contributing to Fica Theme? We'd love your help. Fica Theme is an open source project, built one contribution at a time by users like you. See [the contributing file](docs/contributing.md) for instructions on how to contribute.
+
+### Previewing the theme locally
+
+If you'd like to preview the theme locally (for example, in the process of proposing a change):
+
+1. Clone down the theme's repository (`git clone https://github.com/Involts/jekyll-theme-fica`)
+2. `cd` into the theme's directory
+3. Run `bin/run insdep` to install the necessary dependencies
+
+4. Run `bin/run server` to start the preview server
+5. Visit [`localhost:4000`](http://localhost:4000) or [`localhost:4000/jekyll-theme-fica`](http://localhost:4000/jekyll-theme-fica) in your browser to preview the theme
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

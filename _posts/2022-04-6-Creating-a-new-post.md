@@ -20,6 +20,7 @@ Basic Font Matter
 | `site-title`                          | This displays the website title. **EXCEPT THE HOMEPAGE**
 | `author`                              |  This is optional for the post because the authour is set on the `_config.yml` file.
 | `home`                                | **This is only for the homepage** It displays the website title so that you will not write the website title.
+| `pin`                              | This pins the post to the top of the post-home layout.
 
 Examples:
 
@@ -62,6 +63,17 @@ site-title: Creating a new post
 author: Involts
 ---
 ```
+
+if it is pinned:
+```yml
+---
+layout: post
+site-title: Creating a new post
+author: Involts
+pin: true
+---
+```
+
 
 # Syntax
 

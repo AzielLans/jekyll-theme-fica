@@ -7,7 +7,7 @@
 //                                                 //
 $primary_color: #1d2127 !default;
 $link-color: #4dd0e1!default;
-$text-color: #ffffff !default;
+$text-color: #e7e7e7 !default;
 
 //                                                     //
 //-------------Advance settings-----------------------//
@@ -23,6 +23,8 @@ $site-header-bg: darken($primary_color, 5%) !default;
 // 
 $header-bg-color: $link-color !default;
 $home-header-title-color: darken($primary_color, 3%) !default;
+$btn-download-bg-color: darken($home-header-title-color, 1%)  !default;
+$btn-download-hover-color: darken($btn-download-bg-color, 2%) !default;
 
 // 
 // Site Nav
@@ -35,6 +37,7 @@ $menu-bg-color-chae: darken($primary_color, 6%) !default;
 // Site Footer
 // 
 $footer-bg-color: darken($primary_color, 2%) !default;
+$footer-info-bg-color: darken($footer-bg-color, 2%) !default;
 $footer-head-link-color: darken($text-color, 50%) !default;
 $footer-links-color: darken($text-color, 10%) !default;
 $footer-links-hover-color: darken($footer-links-color, 30%) !default;
@@ -80,27 +83,31 @@ $highlight-text-color: darken($text-color, 100%) !default;
 // 
 // Prompt Tip
 // 
+$prompt-tip-icon-color: #395021 !default;
 $prompt-tip-bg-color: #5a8034 !default;
 
 // 
 //  Prompt Info
 // 
+$prompt-info-icon-color: #12447d !default;
 $prompt-info-bg-color: #1a61b3 !default;
 
 // 
 //  Prompt Warning
 // 
+$prompt-warning-icon-color: #754e12 !default;
 $prompt-warning-bg-color: #b3761a !default;
 
 // 
 // Prompt Danger
 // 
+$prompt-danger-icon-color: #670e0e !default;
 $prompt-danger-bg-color: #b31a1a !default;
 
 // 
 // Code
 // 
-$code-background-color: darken($primary_color, 3%) !default;
+$code-background-color: darken($primary_color, 6%) !default;
 $code-text-color: #4dd0e1 !default;
 $blockquote-text-color: darken($text-color, 40%) !default;
 
@@ -125,7 +132,7 @@ $border-color: lighten($primary_color, 3%) !default;
 // Back to Top
 // 
 $BTT-bg-color: $code-text-color !default;
-$BTT-svg-color: darken($text-color, 100%) !default;
+$BTT-svg-color: rgba(0, 0, 0, 0.54) !default;
 
 // 
 // BOLD

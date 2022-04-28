@@ -1,5 +1,6 @@
 html {
   font-size: $font-size;
+  overflow-x: hidden;
 
   ::selection {
     background-color: $highlight-bg-color;
@@ -50,7 +51,9 @@ figure,
 hr {
   margin-top: $spacing-unit;
   margin-bottom: $spacing-unit;
-  border-color: $border-color;
+  border: 0;
+  border-top: 2px solid $footer-head-link-color;
+  border-radius: 7px;
 }
 
 body {
@@ -58,15 +61,14 @@ body {
   color: $text-color;
   background-color: $primary_color;
   -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern"1;
-  -moz-font-feature-settings: "kern"1;
-  -o-font-feature-settings: "kern"1;
-  font-feature-settings: "kern"1;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: keep-all;
 
   &::-webkit-scrollbar {
     width: 7px;
@@ -87,38 +89,12 @@ body {
 //  `main` element
 // 
 main {
+  overflow-y: hidden;
   display: block;
-  /* Default value of `display` of `main` element is 'inline' in IE 11. */
-  animation-name: text_trans;
-  animation-duration: $animation-main;
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-
-  @keyframes text_trans {
-    0% {
-      opacity: 0%;
-    }
-
-    20% {
-      opacity: 20%;
-    }
-
-    50% {
-      opacity: 50%;
-    }
-
-    70% {
-      opacity: 70%;
-    }
-
-    90% {
-      opacity: 90%;
-    }
-
-    100% {
-      opacity: 100%;
-    }
-  }
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: 208.898ms linear 0s 1 normal forwards running slide-up;
+  animation-delay: 252.00568990042672ms;
 }
 
 // 
@@ -130,7 +106,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $h2-h6_fnt-wght;
   font-family: $text-font-family;
 }
 
@@ -139,6 +114,42 @@ h1 {
   font-family: $text-font-family;
   font-size: $h1_fnt-sze;
 }
+
+h2 {
+  font-weight: 650;
+  @include relative-font-size(1.75);
+
+  @media screen and (min-width: $pc-width) {
+    @include relative-font-size(2);
+  }
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 2.2rem;
+
+  @include relative-font-size(1.375);
+
+  @media screen and (min-width: $pc-width) {
+    @include relative-font-size(1.625);
+  }
+}
+
+h4 {
+  font-weight: 550;
+  @include relative-font-size(1.25);
+}
+
+h5 {
+  font-family: 500;
+  @include relative-font-size(1.125);
+}
+
+h6 {
+  font-family: 450;
+  @include relative-font-size(1.0625);
+}
+
 
 // 
 // Lists
@@ -155,6 +166,7 @@ a {
   text-decoration: none;
   transition: $transition-links;
   color: $link-visited-color;
+  font-weight: 700;
 
   &:visited {
     color: $link-visited-color;
@@ -173,6 +185,14 @@ li {
   >ol {
     margin-bottom: 0;
   }
+}
+
+// 
+// Image
+// 
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 // 
@@ -218,32 +238,19 @@ blockquote {
 // 
 pre,
 code {
-  font-family: $code-font-family;
-  font-size: 0.9375em;
+  font-size: 0.95rem;
   border: 1px solid $code-background-color;
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 700;
   background-color: $code-background-color;
   color: $code-text-color;
 
-  &::-webkit-scrollbar {
-    width: 7px;
-    height: 9px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: $code-background-color;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $scroll_bar_bg_color;
-    border-radius: 4px;
-  }
+  @include horizontal-scroll();
 }
 
 code {
   padding: 1px 5px;
-  
+
   a {
     color: inherit !important;
     border-bottom: none !important;
@@ -263,6 +270,7 @@ pre {
 
 .rouge-table {
   width: 0%;
+
   .rouge-gutter {
     padding: 0px;
     border: 0px;
@@ -286,19 +294,19 @@ pre {
   pre {
     margin-bottom: 0;
     font-size: $code-font-family;
-    line-height: 1.4rem;
+    line-height: 1.5rem;
     word-wrap: normal;
     /* Fixed Safari overflow-x */
   }
 
   .lineno {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     padding-left: 0px;
     padding-right: 0px;
     width: 1%;
 
-     min-width: 20px;
+    min-width: 20px;
     text-align: right;
     color: $footer-head-link-color;
     -webkit-user-select: none;
@@ -313,11 +321,11 @@ pre {
   .gp {
     user-select: none;
   }
-  
+
   table {
     td pre {
       overflow: visible; // Fixed iOS safari overflow-x 
-      word-break: normal;// Fixed iOS safari linenos code break
+      word-break: normal; // Fixed iOS safari linenos code break
     }
   }
 
@@ -350,6 +358,44 @@ div {
   }
 }
 
+// 
+// Tooltip
+// 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 105px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 0;
+  position: absolute;
+  z-index: 1;
+  top: 70%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 0.90rem;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 // 
 // Wrappers
@@ -423,19 +469,7 @@ table {
   color: $table-text-color;
   border-collapse: collapse;
 
-  &::-webkit-scrollbar {
-    width: 7px;
-    height: 9px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: $primary_color;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $scroll_bar_bg_color;
-    border-radius: 4px;
-  }
+  @include horizontal-scroll();
 
   tr {
     &:nth-child(even) {
@@ -443,10 +477,17 @@ table {
     }
   }
 
-  th,
+  th {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    border-bottom: 3px solid $text-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+  }
+
   td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
-    border: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
   }
 
   th {
@@ -480,23 +521,29 @@ dl {
   border-radius: 20px;
   align-content: center;
   height: 500px;
+
+  >svg {
+    height: 220px;
+    width: 220px;
+    margin-left: 3px;
+    margin-right: 5px;
+    margin-top: 50px;
+    fill: $error-btn-svg-color;
+  }
+
+  >h1 {
+    font-weight: bolder;
+  }
 }
 
-.container svg {
-  height: 220px;
-  width: 220px;
-  margin-left: 3px;
-  margin-right: 5px;
-  margin-top: 50px;
-  fill: $error-btn-svg-color
-}
+.error-pagh {
+  >p {
+    margin-bottom: 3px;
 
-.container h1 {
-  font-weight: bolder;
-}
-
-.container p {
-  margin-bottom: 3px;
+    &:last-child {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .btn-error {
@@ -525,63 +572,18 @@ dl {
 // 
 // Prompts
 // 
-
-@mixin prompt {
-  border-radius: 5px;
-  border-left: 0;
-  padding: 0.80rem 1.2rem;
-  font-style: normal;
-  color: $text-color;
-  font-weight: 400;
-  display: flex;
-  font-size: $small-font-size;
-  text-align: center;
+.prompt-tip {
+  @include prompt("tips_and_updates", $prompt-tip-icon-color, $prompt-tip-bg-color, "Material Icons Outlined");
 }
 
-.prompt-tip {
-  background-color: $prompt-tip-bg-color;
-  @include prompt();
+.prompt-info {
+  @include prompt("info", $prompt-info-icon-color, $prompt-info-bg-color, "Material Icons Outlined");
+}
 
-  &::before {
-    display: block; //tip color//
-    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='rgb(57, 80, 33)' viewBox='0 0 30 30'>
-<path d='M7,20h4c0,1.1-0.9,2-2,2S7,21.1,7,20z M5,19h8v-2H5V19z M16.5,9.5c0,3.82-2.66,5.86-3.77,6.5H5.27 C4.16,15.36,1.5,13.32,1.5,9.5C1.5,5.36,4.86,2,9,2S16.5,5.36,16.5,9.5z M14.5,9.5C14.5,6.47,12.03,4,9,4S3.5,6.47,3.5,9.5 c0,2.47,1.49,3.89,2.35,4.5h6.3C13.01,13.39,14.5,11.97,14.5,9.5z M21.37,7.37L20,8l1.37,0.63L22,10l0.63-1.37L24,8l-1.37-0.63L22,6 L21.37,7.37z M19,6l0.94-2.06L22,3l-2.06-0.94L19,0l-0.94,2.06L16,3l2.06,0.94L19,6z'/> </svg>");
+.prompt-warning {
+  @include prompt("warning", $prompt-warning-icon-color, $prompt-warning-bg-color, "Material Icons Round");
+}
 
-    }
-  }
-
-  .prompt-info {
-    background-color: $prompt-info-bg-color;
-    @include prompt();
-
-    &::before {
-      display: block; //tip color//
-      content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='rgb(18, 68, 125)' viewBox='0 0 30 30'>
-<path d='M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z'/> </svg>");
-
-      }
-    }
-
-    .prompt-warning {
-      background-color: $prompt-warning-bg-color;
-      @include prompt();
-
-      &::before {
-        display: block; //tip color//
-        content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='rgb(117, 78, 18)' viewBox='0 0 30 30'>
-<path d='M4.47 21h15.06c1.54 0 2.5-1.67 1.73-3L13.73 4.99c-.77-1.33-2.69-1.33-3.46 0L2.74 18c-.77 1.33.19 3 1.73 3zM12 14c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1s1 .45 1 1v2c0 .55-.45 1-1 1zm1 4h-2v-2h2v2z'/> </svg>");
-
-        }
-      }
-
-      .prompt-danger {
-        background-color: $prompt-danger-bg-color;
-        @include prompt();
-
-        &::before {
-          display: block; //tip color//
-          content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='rgb(103, 14, 14)' viewBox='0 0 30 30'>
-<path d='M14.9,3H9.1C8.57,3,8.06,3.21,7.68,3.59l-4.1,4.1C3.21,8.06,3,8.57,3,9.1v5.8c0,0.53,0.21,1.04,0.59,1.41l4.1,4.1 C8.06,20.79,8.57,21,9.1,21h5.8c0.53,0,1.04-0.21,1.41-0.59l4.1-4.1C20.79,15.94,21,15.43,21,14.9V9.1c0-0.53-0.21-1.04-0.59-1.41 l-4.1-4.1C15.94,3.21,15.43,3,14.9,3z M15.54,15.54L15.54,15.54c-0.39,0.39-1.02,0.39-1.41,0L12,13.41l-2.12,2.12 c-0.39,0.39-1.02,0.39-1.41,0l0,0c-0.39-0.39-0.39-1.02,0-1.41L10.59,12L8.46,9.88c-0.39-0.39-0.39-1.02,0-1.41l0,0 c0.39-0.39,1.02-0.39,1.41,0L12,10.59l2.12-2.12c0.39-0.39,1.02-0.39,1.41,0l0,0c0.39,0.39,0.39,1.02,0,1.41L13.41,12l2.12,2.12 C15.93,14.51,15.93,15.15,15.54,15.54z'/> </svg>");
-
-          }
-        }
+.prompt-danger {
+  @include prompt("dangerous", $prompt-danger-icon-color, $prompt-danger-bg-color, "Material Icons Round");
+}

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "jekyll-theme-fica"
-  spec.version = "0.1.9"
+  spec.version = "0.2.0"
   spec.authors = ["Involts"]
   spec.email = ["aziellan27@gmail.com"]
 
@@ -10,7 +10,14 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/Involts/jekyll-theme-fica"
   spec.license  = "MIT"
 
-  spec.metadata["plugin_type"] = "theme"
+  spec.metadata = {
+    "bug_tracker_uri"   => "https://github.com/Involts/jekyll-theme-fica/issues",
+    "documentation_uri" => "https://github.com/Involts/jekyll-theme-fica#readme",
+    "homepage_uri"      => "https://involts.github.io/jekyll-theme-fica/",
+    "source_code_uri"   => "https://github.com/Involts/jekyll-theme-fica",
+    "wiki_uri"          => "https://github.com/Involts/jekyll-theme-fica/wiki",
+    "plugin_type"       => "theme"
+  }
 
   spec.files = `git ls-files -z`.split("\x0").select do |f|
     f.match(%r!^(assets|js|docs|bin|.github|post|_(includes|layouts|sass|posts)/|(LICENSE|README|logo|404)((\.(txt|md|markdown|png|html)|$)))!i)

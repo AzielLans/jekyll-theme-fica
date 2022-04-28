@@ -77,21 +77,25 @@ $highlight-text-color: lighten($text-color, 100%) !default;
 // 
 // prompt Tip
 // 
+$prompt-tip-icon-color: #395021 !default;
 $prompt-tip-bg-color: #82be46 !default;
 
 // 
 //  Prompt Info
 // 
+$prompt-info-icon-color: #12447d !default;
 $prompt-info-bg-color: #1e6ec9 !default;
 
 // 
 //  Prompt Warning
 // 
+$prompt-warning-icon-color: #754e12 !default;
 $prompt-warning-bg-color: #dd9222 !default;
 
 // 
 // Prompt Danger
 // 
+$prompt-danger-icon-color: #670e0e !default;
 $prompt-danger-bg-color: #d32121 !default;
 
 // 
@@ -104,8 +108,8 @@ $blockquote-text-color: lighten($text-color, 40%) !default;
 // 
 // links
 // 
-$link-visited-color: $link-color !default;
-$link-hover-color: darken($link-color, 10%) !default;
+$link-visited-color: $code-text-color !default;
+$link-hover-color: darken($link-color, 15%) !default;
 
 // 
 //table
@@ -122,7 +126,7 @@ $border-color: darken($primary_color, 2%) !default;
 // Back to Top
 // 
 $BTT-bg-color: $code-text-color !default;
-$BTT-svg-color: darken($text-color, 100%) !default;
+$BTT-svg-color: rgba(255, 255, 255, 1) !default;
 
 // 
 // BOLD
