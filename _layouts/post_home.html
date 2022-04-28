@@ -6,8 +6,7 @@ layout: default
 
   {{ content }}
 
-  {%- if site.paginate -%}
-  {% assign pinned = site.posts | where: "pin", "true" %}
+{% assign pinned = site.posts | where: "pin", "true" %}
 {% assign default = site.posts | where_exp: "item", "item.pin != true and item.hidden != true" %}
 
 {% assign posts = "" | split: "" %}
@@ -78,8 +77,6 @@ layout: default
   {% endfor %}
 {% endif %}
 
-  {% endif %}
-
   {%- if posts.size > 0 -%}
   <div class="post-list">
     {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
@@ -147,5 +144,3 @@ layout: default
   </ul>
   {%- endif %}
 </div>
-
-{%- endif -%}
