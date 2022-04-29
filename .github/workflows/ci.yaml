@@ -2,10 +2,10 @@ name: Working on it...
 on:
   push:
     branches:
-      - master
+      - beta
   pull_request:
     branches:
-      - master
+      - beta
 jobs:
   build:
     name: "Test with Jekyll ${{ matrix.jekyll }}"
