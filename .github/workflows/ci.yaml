@@ -1,27 +1,20 @@
-name: Working on it...
-on:
-  push:
-    branches:
-      - beta
-  pull_request:
-    branches:
-      - beta
+name: 'Fica testing tool'
+
 jobs:
   build:
-    name: "Test with Jekyll ${{ matrix.jekyll }}"
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        jekyll: ["~> 3.9"]
-    env:
-      JEKYLL_VERSION: ${{ matrix.jekyll }}
+        ruby: [2.5, 2.6, 2.7, 3]
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Set Up Ruby 2.7
+        with:
+          fetch-depth: 0  # for posts's lastmod
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Run checks
-        run: bin/gh-load
+      - name: Test Site
+        run: bash bin/run insdep

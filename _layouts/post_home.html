@@ -27,17 +27,17 @@ item.hidden != true" %}
 {% assign default_beg = offset | minus: pinned.size %}
 
 {% if default_beg <0 %}
-  {% assign default_beg= 0 %}
-  {% endif %}
+{% assign default_beg= 0 %}
+{% endif %}
 
-  {% assign default_num= paginator.posts | size | minus: pinned_num %}
-  {% assign default_end= default_beg | plus: default_num | minus: 1 %}
+{% assign default_num= paginator.posts | size | minus: pinned_num %}
+{% assign default_end= default_beg | plus: default_num | minus: 1 %}
 
-  {% if default_num> 0 %}
-  {% for i in (default_beg..default_end) %}
-  {% assign posts = posts | push: default[i] %}
-  {% endfor %}
-  {% endif %}
+{% if default_num> 0 %}
+{% for i in (default_beg..default_end) %}
+{% assign posts = posts | push: default[i] %}
+{% endfor %}
+{% endif %}
 
 <div class="home">
     {{ content }}
