@@ -24,4 +24,4 @@ jobs:
           ruby-version: 2.7
           bundler-cache: true
       - name: Run checks
-        run: bin/gp-load
+        run: bin/run insdep

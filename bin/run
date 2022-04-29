@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+
+# 
+# Name of the theme
+# 
+THEME="jekyll-theme-fica"
+
+# 
+# the name of the script
+# 
+SCRIPT="bin/"$( basename "$0" )
+
+# 
+# Current version
+# 
+VERSION="0.2.0"
+
+#
+# Colors
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# 
+# help option
+# 
+function usage
+{
+echo -e "$CYAN$THEME$NC the modern theme with minimal look"
+echo -e ""
+echo -e "Usage:"
+echo -e    "$SCRIPT $CYAN[subcommand]$NC"
+echo -e ""
+echo -e ""
+echo -e "Subcommand:"
+echo -e "  $YELLOW upgrade, u $NC    Upgrades $TEME to the latest version"
+echo -e "  $YELLOW help, h  $NC      Print help."
+echo -e "  $YELLOW version, v   $NC  Print version."
+echo -e "  $YELLOW server, s $NC        Runs the server locally"
+echo -e "  $YELLOW insdep, idp $NC   Installs all the dependencies"
+}
+
+#
+# Upgrade the theme to the latest version
+#
+function Upgrade 
+{
+  echo "Upgrading $THEME to $VERSION"
+  sed -i "s/gem 'jekyll-theme-fica', '~> 0.1.9'/gem 'jekyll-theme-fica', '~> 2.0.0'/gi" ./Gemfile
+  echo "Upgrade Complete!"
+}
+
+#
+# Runing the server locally
+#
+function server 
+{
+  echo "Starting Server....."
+  bundle exec jekyll serve
+}
+
+#
+# Installs all dependencies
+#
+function install_dependencies
+{
+  echo "Installing Dependencies of $THEME"
+  gem install bundler
+  bundle install
+}
+
+function error
+{
+    printf "$RED Subcommand not recognized.$NC"
+    echo ""
+    printf "$CYAN For an overview of the command, execute:"
+    echo ""
+    printf " $SCRIPT help$NC"
+}
+
+function version
+{
+printf "$CYAN$THEME$NC v$VERSION"
+}
+
+#
+# Process subcommands
+#
+while (( $# ))
+do
+    case "$1" in
+
+    
+        Upgrade  | u)
+            Upgrade
+            install_dependencies 
+            exit 0
+        ;; 
+
+        insdep | idp)
+            install_dependencies
+            exit 0
+        ;;    
+
+        server | s)
+            server
+            exit 0
+        ;;
+
+        help | h)
+            usage
+            exit 0
+        ;;
+
+        version | v)
+            version
+            exit 0
+        ;;
+
+                    *)
+            error
+            exit 1
+        ;;
+
+    esac
+done
+
+printf "${RED}A subcommand is required.${NC}"
+echo ""
+usage
