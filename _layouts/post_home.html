@@ -3,6 +3,9 @@ layout: default
 ---
 <div class="home">
 
+  {{ content }}
+
+  {%- if site.paginate -%}
   {% assign pinned = site.posts | where: "pin", "true" %}
   {% assign default = site.posts | where_exp: "item", "item.pin != true and
   item.hidden != true" %}
@@ -39,109 +42,76 @@ layout: default
     {% assign posts = posts | push: default[i] %}
     {% endfor %}
     {% endif %}
-    {% assign pinned = site.posts | where: "pin", "true" %}
-    {% assign default = site.posts | where_exp: "item", "item.pin != true and
-    item.hidden != true" %}
-
-    {% assign posts = "" | split: "" %}
-
-    <!-- Get pinned posts -->
-
-    {% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-    {% assign pinned_num = pinned.size | minus: offset %}
-
-    {% if pinned_num > 0 %}
-    {% for i in (offset..pinned.size) limit: pinned_num %}
-    {% assign posts = posts | push: pinned[i] %}
-    {% endfor %}
     {% else %}
-    {% assign pinned_num = 0 %}
+    {% assign posts = site.posts %}
     {% endif %}
 
 
-    <!-- Get default posts -->
-
-    {% assign default_beg = offset | minus: pinned.size %}
-
-    {% if default_beg <0 %}
-      {% assign default_beg= 0 %}
-      {% endif %}
-
-      {% assign default_num= paginator.posts | size | minus: pinned_num %}
-      {% assign default_end= default_beg | plus: default_num | minus: 1 %}
-
-      {% if default_num> 0 %}
-      {% for i in (default_beg..default_end) %}
-      {% assign posts = posts | push: default[i] %}
-      {% endfor %}
-      {% endif %}
-
-      {%- if posts.size > 0 -%}
-      <div class="post-list">
-        {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-        {%- for post in posts -%}
-        <li>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-          <div class="post-info">
-            {%- assign date_format_tooltip = site.fica.date_format | default:
-            "%b
-            %-d, %Y" -%}
-            <span class="post-info-date">{{ post.date | date: date_format }}</span>
-            {% if post.pin %}
-            <span class="post-info-pin">
-              <span class="material-icons-round">
-                push_pin
-              </span>
-              <p>pinned</p>
+    {%- if posts.size > 0 -%}
+    <div class="post-list">
+      {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+      {%- for post in posts -%}
+      <li>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+        <div class="post-info">
+          {%- assign date_format_tooltip = site.fica.date_format | default:
+          "%b
+          %-d, %Y" -%}
+          <span class="post-info-date">{{ post.date | date: date_format }}</span>
+          {% if post.pin %}
+          <span class="post-info-pin">
+            <span class="material-icons-round">
+              push_pin
             </span>
-            {%- endif -%}
-
-          </div>
-          {%- if site.show_descriptions -%}
-          {{ post.excerpt }}
+            <p>pinned</p>
+          </span>
           {%- endif -%}
-        </li>
-        {%- endfor -%}
-      </div>
-      {%- endif %}
 
-      {%- if site.paginate -%}
-      <ul class="post-nav">
-        <li>
-          {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path | relative_url }}">
-            <span class="material-icons-round post-nav-svg">
-              arrow_back_ios
-            </span>
-          </a>
-          {% else %}
-          <a>
-            <span class="material-icons-round post-nav-svg disable-svg">
-              chevron_left
-            </span>
-          </a>
-          {% endif %}
-        </li>
-        <li class="post-nav-num">{{ paginator.page }}
-          /
-          {{ paginator.total_pages }}</li>
-        <li>
-          {%- if paginator.next_page %}
-          <a href="{{ paginator.next_page_path | relative_url }}">
-            <span class="material-icons-round post-nav-svg">
-              arrow_forward_ios
-            </span>
-          </a>
-          {%- else %}
-          <a>
-            <span class="material-icons-round post-nav-svg disable-svg">
-              chevron_right
-            </span>
-          </a>
-          {%- endif %}
-        </li>
-      </ul>
-      {%- endif %}
-</div>
+        </div>
+        {%- if site.show_descriptions -%}
+        {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </div>
+
+    {%- if site.paginate -%}
+    <ul class="post-nav">
+      <li>
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}">
+          <span class="material-icons-round post-nav-svg">
+            arrow_back_ios
+          </span>
+        </a>
+        {% else %}
+        <a>
+          <span class="material-icons-round post-nav-svg disable-svg">
+            chevron_left
+          </span>
+        </a>
+        {% endif %}
+      </li>
+      <li class="post-nav-num">{{ paginator.page }}
+        /
+        {{ paginator.total_pages }}</li>
+      <li>
+        {%- if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}">
+          <span class="material-icons-round post-nav-svg">
+            arrow_forward_ios
+          </span>
+        </a>
+        {%- else %}
+        <a>
+          <span class="material-icons-round post-nav-svg disable-svg">
+            chevron_right
+          </span>
+        </a>
+        {%- endif %}
+      </li>
+    </ul>
+    {%- endif %}
+    {%- endif -%}
