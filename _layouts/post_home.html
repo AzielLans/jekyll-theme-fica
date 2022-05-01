@@ -2,9 +2,9 @@
 layout: default
 ---
 <div class="home">
+    {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
-
-    {{ content }}
+    {% endif %}
 
     {%- if site.paginate -%}
         {% assign pinned = site.posts | where: "pin", "true" %}
@@ -52,8 +52,7 @@ layout: default
                         {{ post.title | escape }}
                     </a>
                     <div class="post-info">
-                        {%- assign date_format_tooltip = site.fica.date_format | default: "%b
-          %-d, %Y" -%}
+                        {%- assign date_format_tooltip = site.fica.date_format | default: "%b%-d, %Y" -%}
                         <span class="post-info-date">{{ post.date | date: date_format }}</span>
                         {% if post.pin %}
                             <span class="post-info-pin">
