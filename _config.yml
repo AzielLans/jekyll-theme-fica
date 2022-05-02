@@ -30,7 +30,7 @@ header:
 
     external_link_2: false # if false, it adds the baseurl of the site
     header_name_2: Post
-    header_link_2: /Post/
+    header_link_2: /post/
     
     external_link_3: false # if false, it adds the baseurl of the site
     header_name_3: About
@@ -50,7 +50,7 @@ socials:
 # Pagination
 paginate: true
 paginate: 3
-paginate_path: "/Post/page:num/"
+paginate_path: "/post/page:num/"
 
 
 plugins:
