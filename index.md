@@ -114,6 +114,7 @@ header:
   | `version` , `v`  |   Print version.                      |
   | `server` , `s`   |  Runs the server locally              |
   | `insdep` , `idp` |  Installs all the dependencies        |
+  | `chktheme` , `ckte` |   Checks the theme for errors      |
 
 ## Customizing the Styles, Vriables and Color Scheme:
 

@@ -58,6 +58,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
 
+url: 'https://involts.github.io/'  
+
 exclude:
   - "*.gem"
   - "*.gemspec"

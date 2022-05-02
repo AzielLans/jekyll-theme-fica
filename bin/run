@@ -34,11 +34,12 @@ echo -e    "$SCRIPT $CYAN[subcommand]$NC"
 echo -e ""
 echo -e ""
 echo -e "Subcommand:"
-echo -e "  $YELLOW upgrade, u $NC    Upgrades $TEME to the latest version"
-echo -e "  $YELLOW help, h  $NC      Print help."
-echo -e "  $YELLOW version, v   $NC  Print version."
+echo -e "  $YELLOW upgrade, u $NC       Upgrades $TEME to the latest version"
+echo -e "  $YELLOW help, h  $NC         displays all the subcommand available and how to use it"
+echo -e "  $YELLOW version, v   $NC     show the version of the theme"
 echo -e "  $YELLOW server, s $NC        Runs the server locally"
-echo -e "  $YELLOW insdep, idp $NC   Installs all the dependencies"
+echo -e "  $YELLOW insdep, idp $NC      Installs all the dependencies"
+echo -e "  $YELLOW chktheme, ckte $NC   Checks the theme for errors"
 }
 
 #
@@ -72,16 +73,28 @@ function install_dependencies
 
 function error
 {
-    printf "$RED Subcommand not recognized.$NC"
+    printf "${RED}Subcommand not recognized.${NC}"
     echo ""
-    printf "$CYAN For an overview of the command, execute:"
-    echo ""
-    printf " $SCRIPT help$NC"
+    usage
 }
 
 function version
 {
 printf "$CYAN$THEME$NC v$VERSION"
+}
+
+#
+# Theme check
+#
+function chktheme
+{
+    printf "Running ${YELLOW}jekyll doctor ${NC}"
+    echo ""
+    jekyll doctor
+    echo ""
+    printf "Running ${YELLOW}jekyll build ${NC}"
+    echo ""
+    jekyll build
 }
 
 #
@@ -117,6 +130,12 @@ do
             version
             exit 0
         ;;
+
+        chktheme | ckte)
+            chktheme
+            exit 0
+        ;;
+        
 
                     *)
             error

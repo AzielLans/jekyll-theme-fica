@@ -2,13 +2,12 @@
 layout: default
 ---
 <div class="home">
-    {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-    {% endif %}
+    <h1 class="page-heading">Posts</h1>
 
     {%- if site.paginate -%}
         {% assign pinned = site.posts | where: "pin", "true" %}
-        {% assign default = site.posts | where_exp: "item", "item.pin != true and item.hidden != true" %}
+        {% assign default = site.posts | where_exp: "item", "item.pin != true" %}
+
         {% assign posts = "" | split: "" %}
 
         <!-- Get pinned posts -->
@@ -29,19 +28,22 @@ layout: default
 
         {% assign default_beg = offset | minus: pinned.size %}
 
-        {% if default_beg <0 %}
-            {% assign default_beg= 0 %}
+        {% if default_beg < 0 %}
+            {% assign default_beg = 0 %}
         {% endif %}
 
-        {% assign default_num= paginator.posts | size | minus: pinned_num %}
-        {% assign default_end= default_beg | plus: default_num | minus: 1 %}
+        {% assign default_num = paginator.posts | size | minus: pinned_num  %}
+        {% assign default_end = default_beg | plus: default_num | minus: 1 %}
 
-        {% if default_num> 0 %}
+        {% if default_num > 0 %}
             {% for i in (default_beg..default_end) %}
                 {% assign posts = posts | push: default[i] %}
             {% endfor %}
         {% endif %}
+    {% else %}
+        {% assign posts = site.posts %}
     {% endif %}
+
 
     {%- if posts.size > 0 -%}
         <div class="post-list">
@@ -99,7 +101,7 @@ layout: default
                             </span>
                         </a>
                     {%- else %}
-                        <a>if
+                        <a>
                             <span class="material-icons-round post-nav-svg disable-svg">
                                 chevron_right
                             </span>
