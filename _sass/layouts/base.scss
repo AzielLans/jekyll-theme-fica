@@ -100,18 +100,8 @@ main {
 // 
 // Headings
 // 
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $text-font-family;
-}
-
 h1 {
   font-weight: $h1_fnt-wght;
-  font-family: $text-font-family;
   font-size: $h1_fnt-sze;
 }
 

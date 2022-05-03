@@ -23,23 +23,23 @@
               </span>
             </label>
             <div class="trigger">
-              {%- if site.external_link_1 -%}
-              <a class="btn-nav" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
-              {%- else -%}
-              <a class="btn-nav" href="{{site.baseurl}}{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
-              {%- endif -%}
-    
-              {%- if site.external_link_2 -%}
-              <a class="page-link" href="{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
-              {%- else -%}
-              <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
-              {%- endif -%}
-    
-              {%- if site.external_link_3 -%}
-              <a class="page-link" href="{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
-              {%- else -%}
-              <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
-              {%- endif -%}
+                {%- if site.header.external_link_1 -%}
+                    <a class="btn-nav" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
+                {%- else -%}
+                    <a class="btn-nav" href="{{site.baseurl}}{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
+                {%- endif -%}
+
+                {%- if site.header.external_link_2 -%}
+                    <a class="page-link" href="{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
+                {%- else -%}
+                    <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_2}}">{{site.header.header_name_2}}</a>
+                {%- endif -%}
+
+                {%- if site.header.external_link_3 -%}
+                    <a class="page-link" href="{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
+                {%- else -%}
+                    <a class="page-link" href="{{site.baseurl}}{{site.header.header_link_3}}">{{site.header.header_name_3}}</a>
+                {%- endif -%}
             </div>
           </nav>
         </div>
@@ -49,7 +49,11 @@
       <div class="banner-content">
         <p class="page-header-title">{{site.title}}</p>
         <p class="site-banner-description">{{site.description}}</p>
-        <a href="#">Download</a>
+            {%- if site.header.external_link_1 -%}
+                <a class="btn-nav" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
+            {%- else -%}
+                <a class="btn-nav" href="{{site.baseurl}}{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
+            {%- endif -%}
       </div>
       <img src="{{site.baseurl}}/assets/img/homepage-pic.png">
     </header>
