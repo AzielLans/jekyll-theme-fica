@@ -5,7 +5,7 @@
 # if you run it locally:
 # theme: jekyll-theme-fica
 
-# if you using GitHub-Pages:
+#  if you using GitHub-Pages:
 remote_theme: Involts/jekyll-theme-fica
 
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
@@ -30,7 +30,7 @@ header:
 
     external_link_2: false # if false, it adds the baseurl of the site
     header_name_2: Post
-    header_link_2: /Post/
+    header_link_2: /post/
     
     external_link_3: false # if false, it adds the baseurl of the site
     header_name_3: About
@@ -50,13 +50,15 @@ socials:
 # Pagination
 paginate: true
 paginate: 3
-paginate_path: "/Post/page:num/"
+paginate_path: "/post/page:num/"
 
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
+
+url: 'https://involts.github.io/'  
 
 exclude:
   - "*.gem"
