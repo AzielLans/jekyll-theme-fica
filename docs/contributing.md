@@ -1,8 +1,8 @@
-# Contributing to the Fica theme
+# Contributing to the Fica Theme
 
-Hi there! We're thrilled that you'd like to contribute to the Fica theme. Your help is essential for keeping it great.
+Hi there! We're thrilled that you'd like to contribute to the Fica Theme. Your help is essential for keeping it great.
 
-the Fica theme is an open source project supported by the efforts of an entire community and built one contribution at a time by users like you. We'd love for you to get involved. Whatever your level of skill or however much time you can give, your contribution is greatly appreciated. There are many ways to contribute, from writing tutorials or blog posts, improving the documentation, submitting bug reports and feature requests, helping other users by commenting on issues, or writing code which can be incorporated into the Fica theme itself.
+the Fica Theme is an open source project supported by the efforts of an entire community and built one contribution at a time by users like you. We'd love for you to get involved. Whatever your level of skill or however much time you can give, your contribution is greatly appreciated. There are many ways to contribute, from writing tutorials or blog posts, improving the documentation, submitting bug reports and feature requests, helping other users by commenting on issues, or writing code which can be incorporated into the Fica Theme itself.
 
 Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
@@ -23,7 +23,7 @@ Here are a few tips for writing *great* bug reports:
 
 ## How to suggest a feature or enhancement
 
-If you find yourself wishing for a feature that doesn't exist in the Fica theme, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that the Fica theme has today have been added because our users saw the need.
+If you find yourself wishing for a feature that doesn't exist in the Fica Theme, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that the Fica Theme has today have been added because our users saw the need.
 
 Feature requests are welcome. But take a moment to find out whether your idea fits with the scope and goals of the project. It's up to you to make a strong case to convince the project's developers of the merits of this feature. Please provide as much detail and context as possible, including describing the problem you're trying to solve.
 
@@ -33,7 +33,7 @@ Feature requests are welcome. But take a moment to find out whether your idea fi
 
 ## Your first contribution
 
-We'd love for you to contribute to the project. Unsure where to begin contributing to the Fica theme? You can start by looking through these "good first issue" and "help wanted" issues:
+We'd love for you to contribute to the project. Unsure where to begin contributing to the Fica Theme? You can start by looking through these "good first issue" and "help wanted" issues:
 
 * [Good first issues](https://github.com/Involts/jekyll-theme-fica/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) - issues which should only require a few lines of code and a test or two
 * [Help wanted issues](https://github.com/Involts/jekyll-theme-fica/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) - issues which may be a bit more involved, but are specifically seeking community contributions
@@ -53,8 +53,8 @@ Here's a few general guidelines for proposing changes:
 At a high level, [the process for proposing changes](https://docs.github.com/get-started/quickstart/github-flow) is:
 
 1. [Fork](https://github.com/Involts/jekyll-theme-fica/fork) and clone the project
-2. Configure and install the dependencies: `script/bootstrap`
-3. Make sure the tests pass on your machine: `script/cibuild`
+2. Configure and install the dependencies: `bin/run insdep`
+3. Make sure the tests pass on your machine: `bin/run chktheme`
 4. Create a new branch: `git checkout -b my-branch-name`
 5. Make your change, add tests, and make sure the tests still pass
 6. Push to your fork and [submit a pull request](https://github.com/Involts/jekyll-theme-fica/compare)
@@ -62,8 +62,8 @@ At a high level, [the process for proposing changes](https://docs.github.com/get
 
 ## Bootstrapping your local development environment
 
-`script/bootstrap`
+`bin/run insdep`
 
 ## Running tests
 
-`script/build`
+`bin/run server`

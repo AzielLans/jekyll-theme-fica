@@ -10,64 +10,32 @@ You can preview the theme to [see what it looks like](https://involts.github.io/
 
 [![Gem Version](https://badge.fury.io/rb/jekyll-theme-fica.svg)](https://badge.fury.io/rb/jekyll-theme-fica)
 
-## Installation and first use
+# Installation
 
-Add this line to your Jekyll site's `Gemfile`:
+### Step 1:
+ Add `gem 'jekyll-theme-fica', '~> 0.2.0'` to your `Gemfile`
 
-```ruby
-gem "jekyll-theme-fica"
-```
+### Step 2:
+ Add `theme: jekyll-theme-fica`, if you run it locally and 
+ 
+ `remote_theme: Involts/jekyll-theme-fica`, if you using GitHub-Pages to your `_config.yml`.
 
-And add this line to your Jekyll site's `_config.yml`:
+### Step 3:
+  Run `$ bin/run insdep`, if you download it on Github and
 
-```yaml
-# if you run it locally:
-theme: jekyll-theme-fica
+  `$ bundle install`, if you download it on RubyGems.org
 
-# if you using GitHub-Pages:
-remote_theme: Involts/jekyll-theme-fica
-```
+### Step 4:
+  Run `$ bin/run server`, if you download it on Github and
 
-to install all the dependencies:
+  `$ bundle exec jekyll serve` if you download it on RubyGems.org
 
-```bash
-$ bin/run insdep
-```
-{: .nolineno }
+## Reminders:
+> Before publishing the site to github-pages, replace the varable of baseurl  `baseurl: /jekyll-fica-theme` in the `_config.yml` in `_config.yml` .
+>  if you have brought a doman remove the varable `baseurl: /jekyll-fica-theme` in the `_config.yml`
+{: .prompt-info }
 
-or
-
-```bash
-$ bundle install
-```
-{: .nolineno }
-
-and run your jekyll site:
-
-```bash
-$ bin/run server
-```
-{: .nolineno }
-
-or
-
-```bash
-$ bundle exec jekyll serve
-```
-{: .nolineno }
-
-## Note:
-
-Before publishing the site to github-pages, replace the varable of baseurl:
-
-if you have brought a doman remove the varable below:
-
-```yml
- # _config.yml
- baseurl: /jekyll-fica-theme
-```
-
-# Customizations
+# Customiztion
 
 ## Customizing `_config.yml`
 
@@ -101,7 +69,7 @@ header:
     header_link_3: /About/
 ```
 
-## `bin/run` testing suite command:
+## `bin/run` testing command suite:
 
 ### Usage:
 
@@ -115,6 +83,7 @@ header:
   | `server` , `s`   |  Runs the server locally              |
   | `insdep` , `idp` |  Installs all the dependencies        |
   | `chktheme` , `ckte` |   Checks the theme for errors      |
+
 
 ## Customizing the Styles, Vriables and Color Scheme:
 
@@ -156,18 +125,5 @@ in `_sass/jekyll-theme-fica.scss`.
 ## Contributing
 
 Interested in contributing to Fica Theme? We'd love your help. Fica Theme is an open source project, built one contribution at a time by users like you. See [the contributing file](docs/contributing.md) for instructions on how to contribute.
-
-### Previewing the theme locally
-
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
-
-1. Clone down the theme's repository (`git clone https://github.com/Involts/jekyll-theme-fica`)
-2. `cd` into the theme's directory
-3. Run `bin/run insdep` to install the necessary dependencies
-
-4. Run `bin/run server` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) or [`localhost:4000/jekyll-theme-fica`](http://localhost:4000/jekyll-theme-fica) in your browser to preview the theme
-
-## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
