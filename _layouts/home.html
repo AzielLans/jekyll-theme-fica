@@ -8,11 +8,7 @@
     <div class="banner-content" id="banner-content">
       <p class="page-header-title">{{site.title}}</p>
       <p class="site-banner-description">{{site.description}}</p>
-      {%- if site.header.external_link_1 -%}
-      <a class="btn-nav" href="{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
-      {%- else -%}
-      <a class="btn-nav" href="{{site.baseurl}}{{site.header.header_link_1}}">{{site.header.header_name_1}}</a>
-      {%- endif -%}
+      <a href="{{ site.header.header_link_1 | relative_url }}">{{site.header.header_name_1}}</a>
     </div>
     <div class="img">
       <img src="{{site.baseurl}}/assets/img/homepage-pic.png">

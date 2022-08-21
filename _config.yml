@@ -12,9 +12,9 @@ remote_theme: Involts/jekyll-theme-fica
 # and doesn't have a custom domain.
 baseurl: /jekyll-theme-fica
 
-title: fica Theme
+title: Fica Theme
 
-description: lorem ispem amept cfidifdfisdf
+description: A modern theme with minimal look.
 
 show_descriptions: true # set to true to show descriptions in posts
 show_comments: true # set to true to show comments in posts
