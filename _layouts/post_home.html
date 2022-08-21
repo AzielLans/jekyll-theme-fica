@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="home">
-    <h1 class="page-heading">Posts</h1>
+    <h1 class="post-title">{{ page.site-title }}</h1>
 
     {%- if site.paginate -%}
         {% assign pinned = site.posts | where: "pin", "true" %}
@@ -49,7 +49,7 @@ layout: default
         <div class="post-list">
             {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
             {%- for post in posts -%}
-                <li>
+                <div class="post">
                     <a class="post-link" href="{{ post.url | relative_url }}">
                         {{ post.title | escape }}
                     </a>
@@ -64,15 +64,11 @@ layout: default
                                 <p>pinned</p>
                             </span>
                         {%- endif -%}
-<<<<<<< HEAD
-
-=======
->>>>>>> 91d38cf37714a464d41160dd1513f5ba186f3bca
                     </div>
                     {%- if site.show_descriptions -%}
                         {{ post.excerpt }}
                     {%- endif -%}
-                </li>
+                </div>
             {%- endfor -%}
         </div>
 

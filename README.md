@@ -8,7 +8,7 @@ You can preview the theme to [see what it looks like](https://involts.github.io/
 # Installation
 
 ### Step 1:
- Add `gem 'jekyll-theme-fica', '~> 0.2.0'` to your `Gemfile`
+ Add `gem 'jekyll-theme-fica', '~> 0.2.2'` to your `Gemfile`
 
 ### Step 2:
  Add `theme: jekyll-theme-fica`, if you run it locally and 
@@ -74,9 +74,11 @@ header:
   | -----------------|---------------------------------------|
   | `upgrade` , `u`  |  Upgrades `jekell-theme-fica` to the latest version |
   | `help` , `h`     |  Print help.                          |
-  | `version` , `v`  |   Print version.                      |
+  | `version` , `v`  |  Print version.                       |
   | `server` , `s`   |  Runs the server locally              |
   | `insdep` , `idp` |  Installs all the dependencies        |
+  | `chktheme`, `ct` |  Checks the theme for errors          |
+  | `bldgem`, `bm`   |  builds the theme and uploads it to RubyGems |
 
 ## Customizing the Styles, Vriables and Color Scheme:
 

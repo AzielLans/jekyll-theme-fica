@@ -13,26 +13,31 @@ You can preview the theme to [see what it looks like](https://involts.github.io/
 # Installation
 
 ### Step 1:
- Add `gem 'jekyll-theme-fica', '~> 0.2.0'` to your `Gemfile`
+
+Add `gem 'jekyll-theme-fica', '~> 0.2.0'` to your `Gemfile`
 
 ### Step 2:
- Add `theme: jekyll-theme-fica`, if you run it locally and 
- 
- `remote_theme: Involts/jekyll-theme-fica`, if you using GitHub-Pages to your `_config.yml`.
+
+Add `theme: jekyll-theme-fica`, if you run it locally and
+
+`remote_theme: Involts/jekyll-theme-fica`, if you using GitHub-Pages to your `_config.yml`.
 
 ### Step 3:
-  Run `$ bin/run insdep`, if you download it on Github and
 
-  `$ bundle install`, if you download it on RubyGems.org
+Run `$ bin/run insdep`, if you download it on Github and
+
+`$ bundle install`, if you download it on RubyGems.org
 
 ### Step 4:
-  Run `$ bin/run server`, if you download it on Github and
 
-  `$ bundle exec jekyll serve` if you download it on RubyGems.org
+Run `$ bin/run server`, if you download it on Github and
+
+`$ bundle exec jekyll serve` if you download it on RubyGems.org
 
 ## Reminders:
-> Before publishing the site to github-pages, replace the varable of baseurl  `baseurl: /jekyll-fica-theme` in the `_config.yml` in `_config.yml` .
->  if you have brought a doman remove the varable `baseurl: /jekyll-fica-theme` in the `_config.yml`
+
+> Before publishing the site to github-pages, replace the varable of baseurl `baseurl: /jekyll-fica-theme` in the `_config.yml` in `_config.yml` .
+> if you have brought a doman remove the varable `baseurl: /jekyll-fica-theme` in the `_config.yml`
 {: .prompt-info }
 
 # Customiztion
@@ -56,34 +61,33 @@ Change the links of your site header:
 
 ```yml
 header:
-    external_link_1: true # if false, it adds the baseurl of the site
-    header_name_1: Download
-    header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+  external_link_1: true # if false, it adds the baseurl of the site
+  header_name_1: Download
+  header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
 
-    external_link_2: false # if false, it adds the baseurl of the site
-    header_name_2: Post
-    header_link_2: /Post/
-    
-    external_link_3: false # if false, it adds the baseurl of the site
-    header_name_3: About
-    header_link_3: /About/
+  external_link_2: false # if false, it adds the baseurl of the site
+  header_name_2: Post
+  header_link_2: /Post/
+
+  external_link_3: false # if false, it adds the baseurl of the site
+  header_name_3: About
+  header_link_3: /About/
 ```
 
 ## `bin/run` testing command suite:
 
 ### Usage:
 
-   `bin/run` **subcommand**
+`bin/run` **subcommand**
 
-  | Subcommand       | Description
-  | -----------------|---------------------------------------|
-  | `upgrade` , `u`  |  Upgrades `jekell-theme-fica` to the latest version |
-  | `help` , `h`     |  Print help.                          |
-  | `version` , `v`  |   Print version.                      |
-  | `server` , `s`   |  Runs the server locally              |
-  | `insdep` , `idp` |  Installs all the dependencies        |
-  | `chktheme` , `ckte` |   Checks the theme for errors      |
-
+| Subcommand          | Description                                        |
+| ------------------- | -------------------------------------------------- |
+| `upgrade` , `u`     | Upgrades `jekell-theme-fica` to the latest version |
+| `help` , `h`        | Print help.                                        |
+| `version` , `v`     | Print version.                                     |
+| `server` , `s`      | Runs the server locally                            |
+| `insdep` , `idp`    | Installs all the dependencies                      |
+| `chktheme` , `ckte` | Checks the theme for errors                        |
 
 ## Customizing the Styles, Vriables and Color Scheme:
 
@@ -116,7 +120,6 @@ Replace:
 
 ```diff
 - "themes/dark theme/theme-dark",
-
 + "themes/light theme/theme-light",
 ```
 

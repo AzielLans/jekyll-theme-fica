@@ -3,6 +3,7 @@ layout: post
 site-title: Getting Started
 author: Involts
 pin: true
+post_toc: true
 ---
 
 # Prerequisites
