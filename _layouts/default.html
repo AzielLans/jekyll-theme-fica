@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
-  {%- include Head.html-%}
+<html lang="en">
+    {%- include Head.html -%}
+<body>
+    {%- include Header.html -%}
 
-  <body>
-    {%- include Header.html-%}
-
-    <main class="page-content">
-      <div class="wrapper">{{ content }}</div>
+    <main class="content">
+        <div class="wrapper">
+            {% include assets/anchor-headings.html html=content anchorBody="#" %}
+        </div>
     </main>
-    {%- include BTT.html-%}
-    {%- include Footer.html-%}
-  </body>
+
+    {%- include Footer.html -%}
+    {%- include assets/BTT.html -%}
+</body>
 </html>

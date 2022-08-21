@@ -1,13 +1,12 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ "/assets/css/Style.css" | relative_url }}">
-    <data class="u-url" href="{{ " {{site.baseurl}}/" | relative_url }}"></data>
-    {%- if page.home-%}
-       <title>{{site.title}} | {{site.description}}</title> 
-    {%- else -%}
-       <title>{{page.site-title}} | {{site.title}}</title>
-    {%- endif -%}
-    {% include Google-Analytics.html %}
+  <link rel="stylesheet" href="{{ "/assets/css/Style.css" | relative_url }}">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {%- include assets/Google-Analytics.html -%}
+  {%- if page.home-%}
+  <title>{{site.title}} | {{site.description}}</title>
+  {%- else -%}
+  <title>{{page.site-title}} | {{site.title}}</title>
+  {%- endif -%}
 </head>
