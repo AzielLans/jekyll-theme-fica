@@ -1,4 +1,7 @@
-<img src="https://user-images.githubusercontent.com/100028421/160099110-7571a93c-a1a1-4f45-b969-d7f4dccc3b4c.png"/>
+<img src="https://user-images.githubusercontent.com/100028421/203080866-e75090f1-ae5c-42ac-84a8-6ea43e04465e.png" alt="Fica" width="200" align="left"/>
+
+# Fica Theme
+
 
 You can preview the theme to [see what it looks like](https://involts.github.io/jekyll-theme-fica/) or
 [download it today!](https://github.com/Involts/jekyll-theme-fica/zipball/master)
@@ -121,10 +124,3 @@ in `_sass/jekyll-theme-fica.scss`.
 Interested in contributing to Fica Theme? We'd love your help. Fica Theme is an open source project, built one contribution at a time by users like you. See [the contributing file](docs/contributing.md) for instructions on how to contribute.
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-
-
- 
-
-
-
