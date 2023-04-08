@@ -1,112 +1,88 @@
 <footer class="site-footer">
-    <div class="footer-wrapper">
-      <div class="site-footer-wrapper">
-        <div class="footer-col">
-          <li class="footer-product">{{site.title}}</li>
-          <li class="footer-product">{{site.description}}</li>
-        </div>
-        <div class="footer-col">
-          <li class="links-footer">
-            <span>find me on</span>
-          </li>
-          <li class="links-footer">
-            <a href="https://github.com/Involts">
-              <svg class="svg-icon github">
-                <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-              </svg>
-              <span>Github</span>
-            </a>
-          </li>
-          <li class="links-footer">
-            <a href="/">
-              <svg class="svg-icon youtube">
-                <use xlink:href="{{ 'assets/fica-icons.svg#youtube' | relative_url }}"></use>
-              </svg>
-              <span>Youtube</span>
-            </a>
-          </li>
-          <li class="links-footer">
-            <a href="/">
-              <svg class="svg-icon stackoverflow">
-                <use xlink:href="{{ 'assets/fica-icons.svg#stackoverflow' | relative_url }}"></use>
-              </svg>
-              <span>Stackoverflow</span>
-            </a>
-          </li>
-        </div>
-        <div class="footer-col">
-            <li class="links-footer">
-              <span>You're site</span>
-            </li>
-            <li class="links-footer">
-              <a href="/">
-                <svg class="svg-icon github">
-                  <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-                </svg>
-                <span>sit amet</span>
-              </a>
-            </li>
-            <li class="links-footer">
-              <a href="/">
-                <svg class="svg-icon github">
-                  <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-                </svg>
-                <span>consectetur</span>
-              </a>
-            </li>
-            <li class="links-footer">
-              <a href="/">
-                <svg class="svg-icon github">
-                  <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-                </svg>
-                <span>ipsum</span>
-              </a>
-            </li>
-          </div>
-        <div class="footer-col">
-          <li class="links-footer">
-            <span>You're site</span>
-          </li>
-          <li class="links-footer">
-            <a href="/">
-              <svg class="svg-icon github">
-                <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-              </svg>
-              <span>sit amet</span>
-            </a>
-          </li>
-          <li class="links-footer">
-            <a href="/">
-              <svg class="svg-icon github">
-                <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-              </svg>
-              <span>consectetur</span>
-            </a>
-          </li>
-          <li class="links-footer">
-            <a href="/">
-              <svg class="svg-icon github">
-                <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-              </svg>
-              <span>ipsum</span>
-            </a>
-          </li>
-        </div>
+  <div class="footer-wrapper">
+    <div class="site-footer-wrapper">
+      <div class="footer-col">
+        <li class="footer-product">{{site.title}}</li>
+        <li class="footer-product">{{site.description}}</li>
+      </div>
+      <div class="footer-col">
+        <p>{{site.Footer.footer_section_1_title}}</p>
+        <a href="{{site.Footer.footer_section_1_links_1_link | relative_url }}">
+          <svg class="svg-icon github">
+            <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_1_links_1_name}}</span>
+        </a>
+        <a href="{{site.Footer.footer_section_1_links_2_link | relative_url }}">
+          <svg class="svg-icon youtube">
+            <use xlink:href="{{ 'assets/fica-icons.svg#youtube' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_1_links_2_name}}</span>
+        </a>
+        <a href="{{site.Footer.footer_section_1_links_3_link | relative_url }}">
+          <svg class="svg-icon stackoverflow">
+            <use xlink:href="{{ 'assets/fica-icons.svg#stackoverflow' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_1_links_3_name}}</span>
+        </a>
+      </div>
+      <div class="footer-col">
+        <p>{{site.Footer.footer_section_2_title}}</p>
+        <a href="{{site.Footer.footer_section_2_links_1_link | relative_url }}">
+          <svg class="svg-icon github">
+            <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_2_links_1_name}}</span>
+        </a>
+        <a href="{{site.Footer.footer_section_2_links_2_link | relative_url }}">
+          <svg class="svg-icon github">
+            <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_2_links_2_name}}</span>
+        </a>
+        <a href="{{site.Footer.footer_section_2_links_3_link | relative_url }}">
+          <svg class="svg-icon github">
+            <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_2_links_3_name}}</span>
+        </a>
+      </div>
+      <div class="footer-col">
+        <p>{{site.Footer.footer_section_3_title}}</p>
+        <a href="{{site.Footer.footer_section_3_links_1_link | relative_url }}">
+          <svg class="svg-icon github">
+            <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_3_links_1_name}}</span>
+        </a>
+        <a href="{{site.Footer.footer_section_3_links_2_link | relative_url }}">
+          <svg class="svg-icon github">
+            <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_3_links_2_name}}</span>
+        </a>
+        <a href="{{site.Footer.footer_section_3_links_3_link | relative_url }}">
+          <svg class="svg-icon github">
+            <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span>{{site.Footer.footer_section_3_links_3_name}}</span>
+        </a>
       </div>
     </div>
-    {%- if site.show-footer-copyright -%}
-    <div class="footer-info text-muted">
-      <span>
-        © {{ 'now' | date: "%Y " }}
-        <a href="{{ site.socials.auther-link }}"> {{ site.socials.name }}</a>
-        Some rights reserved.
-      </span>
-      <span>
-        Powered by
-        <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
-        with
-        <a href="https://github.com/Involts/jekyll-theme-fica" target="_blank" rel="noopener">jekyll-theme-fica</a>
-      </span>
-    </div>
-    {%- endif -%}
-  </footer>
+  </div>
+  {%- if site.Footer.show-footer-copyright -%}
+  <div class="footer-info text-muted">
+    <span>
+      © {{ 'now' | date: "%Y " }}
+      <a href="{{ site.socials.auther-link }}"> {{ site.socials.name }}</a>
+      Some rights reserved.
+    </span>
+    <span>
+      Powered by
+      <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+      with
+      <a href="https://github.com/Involts/jekyll-theme-fica" target="_blank" rel="noopener">jekyll-theme-fica</a>
+    </span>
+  </div>
+  {%- endif -%}
+</footer>

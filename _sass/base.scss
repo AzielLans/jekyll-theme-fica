@@ -32,6 +32,12 @@ figure {
   padding: 0;
 }
 
+* {
+  @include horizontal-scroll;
+  margin: 0;
+  padding: 0;
+}
+
 //  set `margin-bottom` to maintain vertical alignment
 h1,
 h2,
@@ -46,51 +52,23 @@ ul,
 ol,
 figure,
 %vertical-rhythm {
-  margin-bottom: $font-spacing - 15;
+  margin-bottom: 15px;
 }
 
-//
-// body
-//
 body {
-  font: $font-weight #{$font-size}/#{$line-height} $font-family;
+  @include body-medium;
+  // font: $font-weight #{$font-size}/#{$line-height} $font-family;
   color: $text-color;
   background-color: $primary_color;
   -webkit-text-size-adjust: 100%;
   font-kerning: normal;
-  display: flex;
   min-height: 100vh;
   flex-direction: column;
   overflow-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  &::-webkit-scrollbar {
-    height: 16px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(128, 134, 139, 0.2);
-    background-clip: padding-box;
-    border: 4px solid transparent;
-    border-radius: 10px;
-    box-sizing: border-box;
-
-    &:hover {
-      background: rgba(128, 134, 139, 0.4);
-      box-sizing: border-box;
-      background-clip: padding-box;
-    }
-  }
+  display: flex;
+  line-height: 40px;
 }
 
-//
-// line
-//
 hr {
   margin-top: $font-spacing;
   margin-bottom: $font-spacing;
@@ -99,6 +77,9 @@ hr {
   border-radius: 7px;
 }
 
+p {
+  line-height: 26px;
+}
 //
 // wrapper
 //
@@ -115,14 +96,13 @@ hr {
   }
 
 
-.post-wrapper {
-  padding: 0 $font-spacing - 5 0 $font-spacing - 5;
+.post-content {
+  padding: 30px $font-spacing - 5 0 $font-spacing - 5;
   margin: 0 auto 0 auto;
-  max-width: $content-width + 100;
 
   @media screen and (min-width: 1111px) {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 15em;
   }
 }
 
@@ -140,33 +120,22 @@ hr {
 // Headers
 //
 h1 {
-  font-size: $font-size + 31;
-  line-height: 1.5;
+  @include headline-large;
 }
-
 h2 {
-  font-size: $font-size + 26;
-  line-height: 1.5;
+  @include headline-medium;
 }
-
 h3 {
-  font-size: $font-size + 21;
-  line-height: 1.5;
+  @include headline-small;
 }
-
 h4 {
-  font-size: $font-size + 16;
-  line-height: 1.5;
+  @include title-large;
 }
-
 h5 {
-  font-size: $font-size + 11;
-  line-height: 1.5;
+  @include title-medium;
 }
-
 h6 {
-  font-size: $font-size + 6;
-  line-height: 1.5;
+  @include title-small;
 }
 
 //
@@ -213,6 +182,7 @@ img {
 strong {
   font-weight: 900;
   font-size: 18px;
+  letter-spacing: 3px;
 }
 
 //
@@ -223,7 +193,7 @@ figure > img {
 }
 
 figcaption {
-  font-size: $small-font-size;
+  @include body-small;
 }
 
 //
@@ -233,7 +203,6 @@ blockquote {
   color: $blockquote-text-color;
   border-left: 4px solid $code-background-color;
   padding-left: $font-spacing / 2;
-  @include relative-font-size(1.125);
   font-style: italic;
 
   > :last-child {
@@ -251,28 +220,25 @@ blockquote {
 //
 pre,
 code {
-  font-size: inherit;
   border: 1px solid $code-background-color;
   border-radius: 4px;
   font-weight: 700;
   background-color: $code-background-color;
   color: $code-text-color;
-
-  @include horizontal-scroll();
-}
-
-code {
+  line-height: 1.5rem;
   padding: 1px 5px;
 
+  @include horizontal-scroll();
   a {
     color: inherit !important;
     border-bottom: none !important;
     pointer-events: none;
   }
 }
-
 pre {
   overflow-x: auto;
+  border: 0;
+
 
   > code {
     border: 0;
@@ -307,7 +273,7 @@ pre {
   pre {
     margin-bottom: 0;
     font-size: $code-font-family;
-    line-height: 1.5rem;
+    // line-height: 1.5rem;
     word-wrap: normal;
     /* Fixed Safari overflow-x */
   }

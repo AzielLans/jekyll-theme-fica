@@ -7,9 +7,9 @@ $code-font-family: "Noto Sans", sans-serif !default;
 $font-size: 17px !default;
 $small-font-size: $font-size * 0.875 !default;
 
-$font-weight: 300 !default;
-$font-spacing: 30px !default;
-$line-height: 2.5 !default;
+$font-weight: 400 !default;
+$font-spacing: 40px !default;
+$line-height: 3.5 !default;
 
 //
 // Table
@@ -101,10 +101,11 @@ $medium-width: 442px !default;
   padding: 0.8rem 1.2rem;
   font-style: normal;
   color: $text-color;
-  font-weight: 400;
   border-left: 6px solid $gf-color;
   background-color: $bg-color;
-  font-size: 0.975rem;
+  p {
+    line-height: 35px;
+  }
 
   &::before {
     content: $gf-icon;
@@ -194,8 +195,19 @@ $medium-width: 442px !default;
 }
 
 @keyframes fade-in {
-  100% {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 

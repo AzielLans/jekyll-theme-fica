@@ -19,20 +19,54 @@ description: A modern theme with minimal look.
 show_descriptions: true # set to true to show descriptions in posts
 show_comments: true # set to true to show comments in posts
 
-show-footer-copyright: true # set to true to show footer copyright
 
 permalink: /Posts/:title/
 date_format: "%b %-d, %Y"
 
-header:
-    header_name_1: Download
-    header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+Header:
+  header_name_1: Download
+  header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
 
-    header_name_2: Post
-    header_link_2: /post/
-    
-    header_name_3: About
-    header_link_3: /About/
+  header_name_2: Post
+  header_link_2: /post/
+  
+  header_name_3: About
+  header_link_3: /About/
+
+Footer:
+  show-footer-copyright: true # set to true to show footer copyright
+  #  Section 1
+  footer_section_1_title: find me on
+  footer_section_1_links_1_name: Github
+  footer_section_1_links_1_link: https://github.com/Involts
+
+  footer_section_1_links_2_name: Youtube
+  footer_section_1_links_2_link: /
+
+  footer_section_1_links_3_name: Stackoverflow
+  footer_section_1_links_3_link: /
+
+  #  Section 2
+  footer_section_2_title: You're Site
+  footer_section_2_links_1_name: Lorem
+  footer_section_2_links_1_link: /
+
+  footer_section_2_links_2_name: ispum
+  footer_section_2_links_2_link: /
+
+  footer_section_2_links_3_name: dolor
+  footer_section_2_links_3_link: /
+
+  # Section 3
+  footer_section_3_title: Customize
+  footer_section_3_links_1_name: Lorem
+  footer_section_3_links_1_link: /
+
+  footer_section_3_links_2_name: ispum
+  footer_section_3_links_2_link: /
+
+  footer_section_3_links_3_name: dolor
+  footer_section_3_links_3_link: /
 
 google_analytics: 
   enabled: true # if false, it disables Google Analytics
