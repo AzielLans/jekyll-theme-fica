@@ -107,7 +107,6 @@ Replace:
 
 ```diff
 - "themes/dark theme/theme-dark",
-
 + "themes/light theme/theme-light",
 ```
 

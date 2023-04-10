@@ -4,12 +4,16 @@
 {%- else -%}
     <nav class="header-home-mod site-nav" id="nav">
 {%- endunless -%}
+
+  <a class="logo" href="{{ site.baseurl }}/">
+    <img src="{{ 'logo.png' | relative_url }}" alt="logo">
+    <p>{{ site.title }}</p>
+  </a>
   <input type="checkbox" id="check" />
   <label for="check">
-    <span class="material-icons checkbtn"> menu </span>
+    <span class="material-icons-round checkbtn"> menu </span>
   </label>
-  <a class="logo" href="{{ site.baseurl }}/">{{ site.title }}</a>
-  <div class="nav-links">
+  <div class="nav-link-container">
     <a href="{{ site.Header.header_link_1 | relative_url }}">{{site.Header.header_name_1}}</a>
     <a href="{{ site.Header.header_link_2 | relative_url }}">{{site.Header.header_name_2}}</a> 
     <a href="{{ site.Header.header_link_3 | relative_url }}">{{site.Header.header_name_3}}</a>
