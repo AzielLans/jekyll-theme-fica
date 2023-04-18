@@ -1,5 +1,5 @@
-const nav = document.getElementById("nav")
-const navcheck = document.getElementById("check")
+const nav = document.getElementById("site-nav")
+const navcheck = document.getElementById("site-nav-check")
 const screenWidth = window.innerWidth;
 const headers= document.getElementsByTagName('h1', "h2", "h3", "h4", "h5")
 window.addEventListener("resize", function () {

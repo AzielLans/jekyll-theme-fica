@@ -1,13 +1,11 @@
 ---
 layout: post
-site-title: Demo
+site-title: Elements of Fica Theme
 author: Involts
-modified_date: 2022-04-3
+modified_date: 2023-04-14
 ---
 
-# Overview of the elements of Fica Theme
-
-## Paragraph
+# Paragraph
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 

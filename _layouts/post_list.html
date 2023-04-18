@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<div class="home">
-    <h1 class="post-title">{{ page.site-title }}</h1>
+<div class="site-post-list">
+    <h1 class="site-post-list-title">{{ page.site-title }}</h1>
 
     {%- if site.paginate -%}
         {% assign pinned = site.posts | where: "pin", "true" %}
@@ -46,10 +46,10 @@ layout: default
 
 
     {%- if posts.size > 0 -%}
-        <div class="post-list">
+        <div class="post-list-container">
             {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
             {%- for post in posts -%}
-                <div class="post">
+                <div class="post-list">
                     <a class="post-link" href="{{ post.url | relative_url }}">
                         {{ post.title | escape }}
                     </a>
@@ -76,16 +76,12 @@ layout: default
             <ul class="post-nav">
                 <li>
                     {% if paginator.previous_page %}
-                        <a href="{{ paginator.previous_page_path | relative_url }}">
-                            <span class="material-icons-round post-nav-svg">
-                                arrow_back_ios
-                            </span>
+                        <a href="{{ paginator.previous_page_path | relative_url }}" class="material-icons-round post-nav-svg">
+                            arrow_back_ios
                         </a>
                     {% else %}
-                        <a>
-                            <span class="material-icons-round post-nav-svg disable-svg">
-                                chevron_left
-                            </span>
+                        <a class="material-icons-round post-nav-svg disable-svg">
+                            chevron_left
                         </a>
                     {% endif %}
                 </li>
@@ -94,16 +90,12 @@ layout: default
                     {{ paginator.total_pages }}</li>
                 <li>
                     {%- if paginator.next_page %}
-                        <a href="{{ paginator.next_page_path | relative_url }}">
-                            <span class="material-icons-round post-nav-svg">
-                                arrow_forward_ios
-                            </span>
+                        <a href="{{ paginator.next_page_path | relative_url }}" class="material-icons-round post-nav-svg">
+                            arrow_forward_ios
                         </a>
                     {%- else %}
-                        <a>
-                            <span class="material-icons-round post-nav-svg disable-svg">
-                                chevron_right
-                            </span>
+                        <a class="material-icons-round post-nav-svg disable-svg">
+                            chevron_right
                         </a>
                     {%- endif %}
                 </li>

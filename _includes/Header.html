@@ -1,19 +1,19 @@
 
 {%- unless page.layout == "home" -%}
-<nav class="site-nav" id="nav">
+<nav class="site-nav" id="site-navnav">
 {%- else -%}
-    <nav class="header-home-mod site-nav" id="nav">
+    <nav class="header-home-mod site-nav" id="site-nav">
 {%- endunless -%}
 
-  <a class="logo" href="{{ site.baseurl }}/">
+  <a class="site-nav-logo" href="{{ site.baseurl }}/">
     <img src="{{ 'logo.png' | relative_url }}" alt="logo">
     <p>{{ site.title }}</p>
   </a>
-  <input type="checkbox" id="check" />
-  <label for="check">
+  <input type="checkbox" id="site-nav-check" />
+  <label for="site-nav-check">
     <span class="material-icons-round checkbtn"> menu </span>
   </label>
-  <div class="nav-link-container">
+  <div class="site-nav-link-container">
     <a href="{{ site.Header.header_link_1 | relative_url }}">{{site.Header.header_name_1}}</a>
     <a href="{{ site.Header.header_link_2 | relative_url }}">{{site.Header.header_name_2}}</a> 
     <a href="{{ site.Header.header_link_3 | relative_url }}">{{site.Header.header_name_3}}</a>

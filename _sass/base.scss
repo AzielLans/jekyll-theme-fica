@@ -90,11 +90,10 @@ p {
 }
 
 .footer-wrapper {
-    padding: 0 $font-spacing - 5 0 $font-spacing - 5;
-    margin: 0 auto 0 auto;
-    max-width: 1168px;
-  }
-
+  padding: 0 $font-spacing - 5 0 $font-spacing - 5;
+  margin: 0 auto 0 auto;
+  max-width: 1168px;
+}
 
 .post-content {
   padding: 30px $font-spacing - 5 0 $font-spacing - 5;
@@ -239,7 +238,6 @@ pre {
   overflow-x: auto;
   border: 0;
 
-
   > code {
     border: 0;
     padding-right: 0;
@@ -381,58 +379,59 @@ dl {
 }
 
 //
-// Error page
+// 404 page
 //
-.container {
+.container-404 {
   margin: 10px auto;
   max-width: 400px;
   text-align: center;
   background-color: $error-div-bg-color;
   border-radius: 20px;
   align-content: center;
+  .prompt-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .paragraph-404 {
+      > p {
+        margin-bottom: 0px;
+        line-height: 2;
 
-  > svg {
-    height: 220px;
-    width: 220px;
-    margin-left: 3px;
-    margin-right: 5px;
-    margin-top: 50px;
-    fill: $error-btn-svg-color;
-  }
-}
-
-.error-pagh {
-  > p {
-    margin-bottom: 0px;
-    line-height: 2;
-
-    &:last-child {
-      margin-bottom: 15px;
+        &:last-child {
+          margin-bottom: 15px;
+        }
+      }
     }
-  }
-}
 
-.btn-error {
-  display: inline-block;
-  padding: 17px 16px 16px;
-  color: #e7e7e7;
-  background-color: #2e353e;
-  transition: all 0.2s ease-in-out;
-  width: 92%;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  height: 24px;
-  line-height: 1.5;
+    .btn-404 {
+      display: inline-block;
+      padding: 17px 16px 16px;
+      color: #e7e7e7;
+      background-color: #2e353e;
+      transition: all 0.2s ease-in-out;
+      width: 92%;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
 
-  &,
-  &:visited {
-    color: $text-color;
-  }
+      &,
+      &:visited {
+        color: $text-color;
+      }
 
-  &:hover {
-    color: $btn-text-hover-color;
-    text-decoration: none;
-    background-color: $btn-color-hover;
-    border-color: $btn-color-hover;
+      &:hover {
+        color: $btn-text-hover-color;
+        text-decoration: none;
+        background-color: $btn-color-hover;
+        border-color: $btn-color-hover;
+      }
+    }
+    > svg {
+      height: 220px;
+      width: 220px;
+      margin-left: 3px;
+      margin-right: 5px;
+      margin-top: 50px;
+      fill: $error-btn-svg-color;
+    }
   }
 }
