@@ -18,7 +18,8 @@
         transition: $transition-links;
         padding: 11px 19px 13px;
         border-radius: 40px;
-  
+        @include animation-fade-in(0.3);
+
         &:hover {
           background-color: $btn-color-hover;
         }
@@ -34,11 +35,11 @@
     border-radius: 3px;
     text-transform: uppercase;
     transition: $transition-links;
+    @include animation-fade-in(0.6);
 
     &:hover {
       color: $text-mute-color;
     }
-
   }
 
   .site-nav-logo {
@@ -50,6 +51,7 @@
     padding: 0 13px;
     font-weight: bold;
     margin-right: auto;
+    @include animation-fade-in(0.1);
 
     &:hover {
       color: $text-mute-color;
@@ -64,7 +66,7 @@
       width: 32px;
       height: 32px;
       transition: all 0.7s ease-in-out;
-    }    
+    }
     p {
       margin-bottom: 0px;
       line-height: 32px;
@@ -72,9 +74,9 @@
     @media screen and (min-width: $pc-width) {
       padding: 0 30px;
     }
-    @media  screen and (max-width: $Site-Nav-Logo-text-autohide) {
-        p {
-          display: none;
+    @media screen and (max-width: $Site-Nav-Logo-text-autohide) {
+      p {
+        display: none;
       }
     }
   }
@@ -210,26 +212,19 @@
     }
 
     .page-header-title {
+      @include display-medium;
       border-top: 8px;
       margin-bottom: 0%;
-      font-size: $site-banner-title-fnt-sze;
       color: $header-bg-color;
       text-align: center;
-      font-weight: bold;
-      font-family: $font-family;
       padding-bottom: 7px;
-      line-height: 1.5;
       @include animation-fade-in(0.1);
     }
 
     .site-banner-description {
       border-top: 8px;
       margin-bottom: 0%;
-      font-size: $site-banner-description-fnt-sze;
-      color: $text-color;
-      text-align: center;
-      font-weight: bold;
-      font-family: $font-family;
+      @include title-large;
       padding-bottom: 7px;
       @include animation-fade-in(1);
     }
@@ -358,29 +353,36 @@
     }
   }
 }
-.site-post-list {
-  .site-post-list-title {
-    @include display-large;
-  }
-  .post-list-container {
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   padding: 9px;
   margin-left: 0;
   list-style: none;
-
-  .post-list {
-    border-bottom: 2px solid $border-color;
+  .post-container {
+    border: 2px solid $border-color;
     padding-bottom: 10px;
-    padding-top: 10px;
-
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    a {
+      color: $text-color;
+    }
+    &:hover {
+      background: linear-gradient(0deg,rgba(68,71,70,.15),rgba(68,71,70,.15));
+    }
+  }
+  .post {
     .post-meta {
       font-size: $small-font-size;
       color: $text-color;
       word-spacing: 1px;
     }
 
-    .post-link {
-      @include relative-font-size(3);
-      line-height: 1.5;
+    .post-header {
+      @include headline-large;
+      margin: 12px 0px 0px 0px;
     }
 
     .post-info {
@@ -446,28 +448,35 @@
       }
     }
 
-    > p {
-      //  Make the description shorter
-      margin: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 3; // line height
-      -webkit-box-orient: vertical;
-    }
+  }    
+  .post-descriptions {
+      p {
+        //  Make the description shorter
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; // line height
+        -webkit-box-orient: vertical;
+      }
 
-    > h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @include body-medium;
+      > h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      a {
+        @include body-medium;
+        a[href^="#"] {
+          display: none
+        }
+      }
     }
-  }
 }
+.site-post-list-title {
+  @include display-large;
 }
-
 
 //
 // Site footer
@@ -487,10 +496,10 @@
     font-size: 20px;
     margin-bottom: 10px;
     p {
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
     a {
