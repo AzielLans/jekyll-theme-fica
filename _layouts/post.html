@@ -38,10 +38,12 @@
            {%- include assets/comments.html -%}
           {%- endif -%}
         </article>
+        {%- unless page.post_toc == false -%}
         <div class="post-toc" id="toc">
           <h2>Contents</h2>
           {% include assets/toc.html html=content h_min=1 h_max=3 %}
         </div>
+        {%- endunless -%}
     </main>
     {%- include assets/BTT.html-%} {%- include Footer.html-%}
   </body>

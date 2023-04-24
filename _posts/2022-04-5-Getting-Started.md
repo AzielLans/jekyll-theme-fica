@@ -3,7 +3,6 @@ layout: post
 site-title: Getting Started
 author: Involts
 pin: true
-post_toc: true
 ---
 
 # Prerequisites
@@ -83,7 +82,7 @@ socials:
   # Change Involts to your full name.
   name: [The auther of the site]
   # it also be the copyright owner's link
-  auther-link: [Link of the auther]
+  author-link: [Link of the auther]
 ```
 
 Change the links of your site header:

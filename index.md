@@ -26,7 +26,6 @@ home: true
   Run `$ bin/run server`, if you download it on Github and
 
   `$ bundle exec jekyll serve` if you download it on RubyGems.org
-
 # Customization
 
 ## Customizing `_config.yml`
@@ -41,7 +40,7 @@ socials:
   # Change Involts to your full name.
   name: [The author of the site]
   # it also be the copyright owner's link
-  auther-link: [Link of the author]
+  author-link: [Link of the author]
 ```
 
 Change the links of your site header:
@@ -61,6 +60,45 @@ header:
     header_link_3: /About/
 ```
 
+Change the links of your site footer
+```yml
+Footer:
+  show-footer-copyright: true # set to true to show footer copyright
+  #  Section 1
+  footer_section_1_title: find me on
+  footer_section_1_links_1_name: Github
+  footer_section_1_links_1_link: https://github.com/Involts
+
+  footer_section_1_links_2_name: Youtube
+  footer_section_1_links_2_link: /
+
+  footer_section_1_links_3_name: Stackoverflow
+  footer_section_1_links_3_link: /
+
+  #  Section 2
+  footer_section_2_title: You're Site
+  footer_section_2_links_1_name: Lorem
+  footer_section_2_links_1_link: /
+
+  footer_section_2_links_2_name: ispum
+  footer_section_2_links_2_link: /
+
+  footer_section_2_links_3_name: dolor
+  footer_section_2_links_3_link: /
+
+  # Section 3
+  footer_section_3_title: Customize
+  footer_section_3_links_1_name: Lorem
+  footer_section_3_links_1_link: /
+
+  footer_section_3_links_2_name: ispum
+  footer_section_3_links_2_link: /
+
+  footer_section_3_links_3_name: dolor
+  footer_section_3_links_3_link: /
+
+```
+
 ## `bin/run` testing command suite:
 
 ### Usage:
@@ -77,40 +115,8 @@ header:
   | `chktheme`, `ct` |  Checks the theme for errors          |
   | `bldgem`, `bm`   |  builds the theme and uploads it to RubyGems |
 
-## Customizing the Styles, Variables and Color Scheme:
+More Customization on the [theme's demo site.](/jekyll-theme-fica/Posts/Fica-Customization/)
 
-if you like to override the default styles of the theme, go to `_sass/Custom/Styles.scss`.
-
-if you like to override the default Variables of the theme, go to `_sass/Custom/Variable.scss`.
-
-if you like to change the colors of the Dark Theme in the site, go to `_sass/themes/dark theme/Dark_Theme.scss`.
-
-if you like to change the colors of the Light Theme in the site, go to `_sass/themes/dark theme/Light_Theme.scss`.
-
-Want to change [the themes?](#how-to-change-dark-mode-to-light-mode)
-
-## How to replace the logo on the header ?
-
-Replace logo.png at the top of your site.
-Make sure that the logo is 36x36 pixels to avoid overlapping the title.
-
-## how to replace the picture at the homepage ?
-
-Replace `assets/img/homepage-pic.png`
-# Customizing Google Analytics code
-
-Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/Google-Analytics.html` in your Jekyll site.
-
-## how to change dark mode to light mode
-
-Replace:
-
-```diff
-- "themes/dark theme/theme-dark",
-+ "themes/light theme/theme-light",
-```
-
-in `_sass/jekyll-theme-fica.scss`.
 
 ## Contributing
 
