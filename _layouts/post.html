@@ -30,9 +30,7 @@
           </header>
           {% include assets/anchor-headings.html html=content anchorBody="#" %}
           <div class="post-footer">
-            <a href="{{ site.baseurl }}{{ site.header.header_link_2 }}">
-              <span class="material-icons-round post-nav-svg"> arrow_back_ios </span>
-            </a>
+              <a href="{{ site.Header.header_link_2 | relative_url }}" class="material-icons-round post-nav-svg"> arrow_back_ios </a>
           </div>
           {%- if site.show_comments -%}
            {%- include assets/comments.html -%}
