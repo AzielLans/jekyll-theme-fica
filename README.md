@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/100028421/203080866-e75090f1-ae5c-42ac-84a8-6ea43e04465e.png" alt="Fica" width="200" align="left"/>
+<img src="https://user-images.githubusercontent.com/100028421/235287420-6f139381-476a-46a2-b774-98790014a478.png" alt="Fica" width="200" align="left"/>
 
 # Fica Theme
 
