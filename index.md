@@ -10,7 +10,7 @@ home: true
 # Installation
 
 ### Step 1:
- Add `gem 'jekyll-theme-fica', '~> 0.2.2'` to your `Gemfile`
+ Add `gem 'jekyll-theme-fica', '~> 0.3.0'` to your `Gemfile`
 
 ### Step 2:
  Add `theme: jekyll-theme-fica`, if you run it locally and 
