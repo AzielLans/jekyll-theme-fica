@@ -2,17 +2,11 @@ name: 'Fica testing tool'
 on:
   push:
     branches:
-<<<<<<< HEAD
-      - beta
-  pull_request:
-    branches:
-      - beta
-=======
       - main
   pull_request:
     branches:
       - main
->>>>>>> 91d38cf37714a464d41160dd1513f5ba186f3bca
+
 
 jobs:
   build:
