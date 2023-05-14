@@ -8,6 +8,8 @@
   height: 80px;
   width: 100%;
   z-index: 100;
+  padding-top: 5px;
+  padding-bottom: 5px;
   .site-nav-link-container {
     margin-right: 25px;
     margin-left: 0;
@@ -26,17 +28,17 @@
       }
     }
   }
+
   a {
-    line-height: 80px;
     margin: 0 5px;
     color: $text-color;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
-    text-transform: uppercase;
     transition: $transition-links;
     @include animation-fade-in(0.6);
-
+    @include title-small;
+    text-transform: uppercase;
     &:hover {
       color: $text-mute-color;
     }
@@ -140,6 +142,9 @@
         }
       }
     }
+    a {
+      line-height: 80px;
+    }
   }
 }
 // .sticky {
@@ -188,13 +193,14 @@
     > a {
       display: block;
       margin-top: 30px;
-      padding: 15px 81px;
+      padding: 21px 81px;
       border: none;
       border-radius: 15px;
       cursor: pointer;
       color: $BTT-svg-color;
       background-color: $link-color;
       transition: $transition-btn;
+      @include title-medium;
 
       @include animation-fade-in(1.65);
 
@@ -224,7 +230,7 @@
     .site-banner-description {
       border-top: 8px;
       margin-bottom: 0%;
-      @include title-large;
+      @include title-medium;
       padding-bottom: 7px;
       @include animation-fade-in(1);
     }
@@ -484,7 +490,6 @@
 .site-footer {
   background-color: $footer-bg-color;
   padding-top: $font-spacing;
-  padding-bottom: 10px;
 
   .site-footer-wrapper {
     display: flex;
