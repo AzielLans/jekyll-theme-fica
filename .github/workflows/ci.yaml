@@ -2,18 +2,10 @@ name: 'Fica testing tool'
 on:
   push:
     branches:
-<<<<<<< HEAD
-      - beta
-  pull_request:
-    branches:
-      - beta
-=======
       - main
   pull_request:
     branches:
       - main
->>>>>>> 91d38cf37714a464d41160dd1513f5ba186f3bca
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,5 +22,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Test Site
+      - name: Install dependency 
         run:  bash bin/run insdep
+      - name: Test Site
+        run: bash bin/run chktheme
