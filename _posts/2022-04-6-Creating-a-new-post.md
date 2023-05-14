@@ -21,6 +21,7 @@ Basic Font Matter
 | `author`                              |  This is optional for the post because the authour is set on the `_config.yml` file.
 | `home`                                | **This is only for the homepage** It displays the website title so that you will not write the website title.
 | `pin`                              | This pins the post to the top of the post-home layout.
+| `post_toc: false`                           | This hides the TOC(Table of Contents) in post
 
 Examples:
 
@@ -45,11 +46,11 @@ permalink: /About/
 
 ```
 
-- Post Home
+- Post List
 
 ```yml
 ---
-layout: post_home
+layout: post_list
 site-title: post
 ---
 ```
@@ -64,7 +65,7 @@ author: Involts
 ---
 ```
 
-if it is pinned:
+if you want to pin the post:
 ```yml
 ---
 layout: post
@@ -74,6 +75,13 @@ pin: true
 ---
 ```
 
+if you want to remove TOC in post
+```yml
+layout: post
+site-title: Creating a new post
+author: Involts
+post_toc: false
+```
 
 # Syntax
 

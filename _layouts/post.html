@@ -4,8 +4,7 @@
 
   <body>
     {%- include Header.html-%}
-    <main class="content">
-      <div class="post-wrapper">
+    <main class="post-content">
         <article class="post">
           <header class="post-header">
             <h1 class="post-title">{{ page.title | escape }}</h1>
@@ -31,19 +30,18 @@
           </header>
           {% include assets/anchor-headings.html html=content anchorBody="#" %}
           <div class="post-footer">
-            <a href="{{ site.baseurl }}{{ site.header.header_link_2 }}">
-              <span class="material-icons-round post-nav-svg"> arrow_back_ios </span>
-            </a>
+              <a href="{{ site.Header.header_link_2 | relative_url }}" class="material-icons-round post-nav-svg"> arrow_back_ios </a>
           </div>
           {%- if site.show_comments -%}
            {%- include assets/comments.html -%}
           {%- endif -%}
         </article>
-        <div class="post-toc">
+        {%- unless page.post_toc == false -%}
+        <div class="post-toc" id="toc">
           <h2>Contents</h2>
           {% include assets/toc.html html=content h_min=1 h_max=3 %}
         </div>
-      </div>
+        {%- endunless -%}
     </main>
     {%- include assets/BTT.html-%} {%- include Footer.html-%}
   </body>
